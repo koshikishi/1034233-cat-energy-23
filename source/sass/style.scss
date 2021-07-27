@@ -1,1 +1,9 @@
-// Начните писать стили здесь
+// Переменные и миксины
+@import "global/variables.scss";
+@import "global/mixins.scss";
+
+// Глобальные стили
+@import "global/global.scss";
+
+// Стили страницы
+@import "blocks/page.scss";

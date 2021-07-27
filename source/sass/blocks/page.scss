@@ -1,0 +1,10 @@
+.page {
+  font: 14px/18px "Arial", sans-serif;
+  color: $colorGreyDarkSpecial100;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  background-color: $colorWhite;
+}
