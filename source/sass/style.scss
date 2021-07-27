@@ -2,8 +2,17 @@
 @import "global/variables.scss";
 @import "global/mixins.scss";
 
+// Шрифты
+@import "global/fonts.scss";
+
 // Глобальные стили
 @import "global/global.scss";
+@import "blocks/visually-hidden.scss";
 
 // Стили страницы
 @import "blocks/page.scss";
+@import "blocks/container.scss";
+
+// Стили шапки
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";

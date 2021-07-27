@@ -1,0 +1,11 @@
+.page-header {
+  min-height: 65px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $colorWhite;
+}
+
+.page-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
