@@ -1,0 +1,28 @@
+.contacts__info {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  padding: 25px 20px;
+  background-color: $colorWhite;
+}
+
+.contacts__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 16px/20px "Oswald", "Arial", sans-serif;
+  color: $colorGreyDarkSpecial300;
+  text-transform: uppercase;
+}
+
+.contacts__address {
+  font-style: normal;
+  line-height: 20px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.contacts__map {
+  height: 362px;
+}
