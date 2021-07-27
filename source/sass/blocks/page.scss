@@ -4,6 +4,9 @@
 }
 
 .page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
   margin: 0;
   min-width: 320px;
   background-color: $colorWhite;
