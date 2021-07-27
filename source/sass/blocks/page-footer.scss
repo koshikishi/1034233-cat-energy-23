@@ -1,0 +1,14 @@
+.page-footer {
+  display: grid;
+  background-color: $colorGrey;
+}
+
+.page-footer__logo {
+  display: flex;
+  height: 95px;
+  border-bottom: 1px solid $colorLine;
+
+  img {
+    margin: auto;
+  }
+}

@@ -1,0 +1,19 @@
+.socials {
+  display: flex;
+  height: 63px;
+  border-bottom: 1px solid $colorLine;
+}
+
+.socials__list {
+  display: grid;
+  grid-template-columns: repeat(3, 23px);
+  grid-auto-rows: minmax(23px, auto);
+  justify-content: space-between;
+  width: 130px;
+  margin: auto;
+}
+
+.socials__link {
+  width: 23px;
+  height: 23px;
+}
