@@ -16,19 +16,16 @@
 
 .promo__wrapper {
   min-height: 480px;
-  line-height: 1;
-  font-family: "Oswald", "Arial", sans-serif;
   text-align: center;
-  color: $colorWhite;
   background: url("../img/promo-can-mobile.png") center bottom 40px / 280px no-repeat;
 }
 
 .promo__title {
-  font-weight: normal;
-  font-size: 36px;
+  color: $colorWhite;
 }
 
 .promo__slogan {
-  font-size: 14px;
+  font: 14px/1 "Oswald", "Arial", sans-serif;
+  color: $colorWhite;
   text-transform: uppercase;
 }
