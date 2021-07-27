@@ -1,4 +1,7 @@
 .main-nav__toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -9,16 +12,28 @@
 .main-nav__list {
   @include list-reset;
 
+  position: absolute;
+  top: 66px;
+  left: 20px;
+  z-index: 1;
+  width: 100%;
+  margin-right: -20px;
+  margin-left: -20px;
   color: $colorBlack;
   background-color: $colorWhite;
+  border-top: 1px solid $colorBorder;
 }
 
 .main-nav__item {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 66px;
   font: 500 20px/20px "Oswald", "Arial", sans-serif;
   text-align: center;
   border-bottom: 1px solid $colorBorder;
 
   a {
+    margin: auto;
     color: inherit;
   }
 }
