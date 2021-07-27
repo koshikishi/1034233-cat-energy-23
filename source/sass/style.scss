@@ -12,7 +12,11 @@
 // Стили страницы
 @import "blocks/page.scss";
 @import "blocks/container.scss";
+@import "blocks/button.scss";
 
 // Стили шапки
 @import "blocks/page-header.scss";
 @import "blocks/main-nav.scss";
+
+// Стили промо-блока
+@import "blocks/promo.scss";
