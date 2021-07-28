@@ -1,6 +1,10 @@
 .page-footer {
-  display: grid;
+  @include grid-container;
   background-color: $colorGrey;
+}
+
+.page-footer__wrapper {
+  grid-column: 2 / -2;
 }
 
 .page-footer__logo {

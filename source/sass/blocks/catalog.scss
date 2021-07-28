@@ -1,15 +1,17 @@
 .catalog {
+  @include grid-container;
+
   margin-bottom: 25px;
   border-top: 1px solid $colorLine;
 }
 
 .catalog__title {
-  margin-right: 20px;
-  margin-left: 20px;
+  grid-column: 2 / -2;
 }
 
 .catalog__list {
   display: grid;
   grid-auto-rows: min-content;
+  grid-column: 1 / -1;
   border-top: 1px solid $colorBorder;
 }

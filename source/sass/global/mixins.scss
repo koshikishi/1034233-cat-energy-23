@@ -13,6 +13,12 @@
   }
 }
 
+// Задаёт базовую макро-сетку
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+}
+
 // Сбрасывает стили списка
 @mixin list-reset {
   margin-top: 0;

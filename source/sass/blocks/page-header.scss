@@ -7,8 +7,8 @@
 }
 
 .page-header__wrapper {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  @include grid-container;
+
   grid-template-rows: 45px 10px auto;
 }
 

@@ -1,6 +1,6 @@
 .main-nav {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  @include grid-container;
+
   grid-template-rows: 45px 10px auto;
   grid-column: 1 / -1;
   grid-row: 1 / -1;

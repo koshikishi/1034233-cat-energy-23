@@ -1,6 +1,11 @@
+.programs {
+  @include grid-container;
+}
+
 .programs__list {
   display: grid;
   grid-auto-rows: 266px;
+  grid-column: 2 / -2;
   gap: 20px;
   margin-bottom: 22px;
 }

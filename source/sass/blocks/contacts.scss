@@ -1,4 +1,6 @@
 .contacts {
+  @include grid-container;
+
   background-color: $colorWhite;
 
   &--inner-page {
@@ -8,7 +10,8 @@
 
 .contacts__info {
   display: grid;
-  grid-template-columns: repeat(2, 140px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / -1;
   padding: 25px 20px;
 }
 
@@ -31,5 +34,6 @@
 }
 
 .contacts__map {
+  grid-column: 1 / -1;
   height: 362px;
 }

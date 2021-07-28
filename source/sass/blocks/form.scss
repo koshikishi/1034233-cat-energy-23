@@ -1,11 +1,12 @@
 .form {
+  @include grid-container;
+
   margin-bottom: 30px;
 }
 
 .form__header {
-  margin-right: 20px;
+  grid-column: 2 / -2;
   margin-bottom: 35px;
-  margin-left: 20px;
 }
 
 .form__title {
@@ -16,6 +17,10 @@
   font: 14px/18px "Oswald", "Arial", sans-serif;
   color: $colorBlack;
   text-transform: uppercase;
+}
+
+.form__main {
+  grid-column: 1 / -1;
 }
 
 .form__fieldset {

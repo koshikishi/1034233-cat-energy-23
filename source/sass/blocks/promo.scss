@@ -1,4 +1,6 @@
 .promo {
+  @include grid-container;
+
   position: relative;
   margin-bottom: 22px;
 
@@ -15,6 +17,7 @@
 }
 
 .promo__wrapper {
+  grid-column: 2 / -2;
   min-height: 480px;
   text-align: center;
   background: url("../img/promo-can-mobile.png") center bottom 40px / 280px no-repeat;
