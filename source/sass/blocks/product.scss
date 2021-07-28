@@ -1,6 +1,6 @@
 .product {
   display: grid;
-  grid-template-columns: repeat(2, 140px);
+  grid-template-columns: repeat(2, 1fr);
   padding: 20px 20px 25px;
   border-bottom: 1px solid $colorBorder;
 }

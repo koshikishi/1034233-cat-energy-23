@@ -22,4 +22,18 @@
   &:active {
     color: rgba($colorWhite, 0.3);
   }
+
+  &--secondary {
+    color: $colorGreyDarkSpecial100;
+    background-color: $colorGrey;
+
+    &:hover,
+    &:focus {
+      background-color: $colorBorder;
+    }
+
+    &:active {
+      color: rgba($colorGreyDarkSpecial100, 0.3);
+    }
+  }
 }
