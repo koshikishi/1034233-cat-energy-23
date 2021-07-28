@@ -1,0 +1,15 @@
+.gift {
+  box-sizing: border-box;
+  min-height: 289px;
+  padding: 186px 58px 43px;
+  background: url("../img/gift-mobile.jpg") center / cover no-repeat $colorPrimary100;
+}
+
+.gift__description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: $colorWhite;
+  text-align: center;
+}

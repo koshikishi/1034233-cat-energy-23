@@ -1,8 +1,15 @@
+.contacts {
+  background-color: $colorWhite;
+
+  &--inner-page {
+    background-color: $colorGrey;
+  }
+}
+
 .contacts__info {
   display: grid;
   grid-template-columns: repeat(2, 140px);
   padding: 25px 20px;
-  background-color: $colorWhite;
 }
 
 .contacts__text {
