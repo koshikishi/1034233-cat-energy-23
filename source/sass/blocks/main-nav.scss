@@ -1,7 +1,14 @@
+.main-nav {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 45px 10px auto;
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+}
+
 .main-nav__toggle {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  grid-column-end: -2;
+  place-self: center end;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -13,13 +20,13 @@
   @include list-reset;
 
   position: absolute;
-  top: 66px;
-  left: 20px;
+  top: 65px;
+  left: 0;
   z-index: 1;
   display: none;
+  grid-column: 1 / -1;
+  grid-row-end: -1;
   width: 100%;
-  margin-right: -20px;
-  margin-left: -20px;
   color: $colorBlack;
   background-color: $colorWhite;
   border-top: 1px solid $colorBorder;

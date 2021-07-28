@@ -1,17 +1,23 @@
 .page-header {
+  position: relative;
+  box-sizing: border-box;
   min-height: 65px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: $colorWhite;
 }
 
 .page-header__wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 10px 45px 10px auto;
 }
 
 .page-header__logo {
+  grid-column: 2 / -2;
+  grid-row-start: 2;
+  place-self: start;
+  width: 191px;
+  height: 38px;
+
   img {
     display: block;
   }
