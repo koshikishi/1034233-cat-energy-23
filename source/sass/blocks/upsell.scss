@@ -1,0 +1,13 @@
+.upsell {
+  margin-bottom: 35px;
+}
+
+.upsell__title {
+  margin-bottom: 35px;
+}
+
+.upsell__list {
+  display: grid;
+  grid-auto-rows: min-content;
+  border-top: 1px solid $colorGreySpecial100;
+}
