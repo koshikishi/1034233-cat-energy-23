@@ -16,12 +16,17 @@
   top: 66px;
   left: 20px;
   z-index: 1;
+  display: none;
   width: 100%;
   margin-right: -20px;
   margin-left: -20px;
   color: $colorBlack;
   background-color: $colorWhite;
   border-top: 1px solid $colorBorder;
+
+  &--shown {
+    display: block;
+  }
 }
 
 .main-nav__item {
