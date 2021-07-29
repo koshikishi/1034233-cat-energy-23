@@ -1,0 +1,39 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 280px;
+  min-height: 40px;
+  padding: 11px 20px;
+  font: 14px/18px "Oswald", "Arial", sans-serif;
+  vertical-align: middle;
+  text-align: center;
+  color: $colorWhite;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  border: none;
+  background-color: $colorPrimary100;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $colorPrimary200;
+  }
+
+  &:active {
+    color: rgba($colorWhite, 0.3);
+  }
+
+  &--secondary {
+    color: $colorGreyDarkSpecial100;
+    background-color: $colorGrey;
+
+    &:hover,
+    &:focus {
+      background-color: $colorBorder;
+    }
+
+    &:active {
+      color: rgba($colorGreyDarkSpecial100, 0.3);
+    }
+  }
+}

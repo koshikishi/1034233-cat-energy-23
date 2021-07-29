@@ -1,0 +1,22 @@
+.upsell {
+  @include grid-container;
+
+  margin-bottom: 35px;
+}
+
+.upsell__title {
+  grid-column: 2 / -2;
+  margin-bottom: 35px;
+}
+
+.upsell__list {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-column: 2 / -2;
+  margin-bottom: 35px;
+  border-top: 1px solid $colorGreySpecial100;
+}
+
+.upsell__gift {
+  grid-column: 2 / -2;
+}

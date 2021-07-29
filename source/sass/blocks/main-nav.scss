@@ -1,0 +1,51 @@
+.main-nav {
+  @include grid-container;
+
+  grid-template-rows: 45px 10px auto;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.main-nav__toggle {
+  grid-column-end: -2;
+  place-self: center end;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.main-nav__list {
+  @include list-reset;
+
+  position: absolute;
+  top: 65px;
+  left: 0;
+  z-index: 1;
+  display: none;
+  grid-column: 1 / -1;
+  grid-row-end: -1;
+  width: 100%;
+  color: $colorBlack;
+  background-color: $colorWhite;
+  border-top: 1px solid $colorBorder;
+
+  &--shown {
+    display: block;
+  }
+}
+
+.main-nav__item {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 66px;
+  font: 500 20px/20px "Oswald", "Arial", sans-serif;
+  text-align: center;
+  border-bottom: 1px solid $colorBorder;
+
+  a {
+    margin: auto;
+    color: inherit;
+  }
+}

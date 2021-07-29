@@ -1,0 +1,36 @@
+.advantages {
+  @include grid-container;
+
+  margin-bottom: 42px;
+}
+
+.advantages__title {
+  grid-column: 2 / -2;
+  margin-bottom: 35px;
+}
+
+.advantages__list {
+  @include list-reset;
+
+  display: grid;
+  grid-column: 2 / -2;
+  gap: 20px;
+  counter-reset: number;
+}
+
+.advantages__item {
+  position: relative;
+  min-height: 60px;
+  padding-left: 80px;
+  counter-increment: number;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: $colorPrimary100;
+  }
+}

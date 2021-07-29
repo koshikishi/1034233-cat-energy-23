@@ -1,1 +1,58 @@
-// Начните писать стили здесь
+// Normalize.css
+@import "global/normalize";
+
+// Переменные и миксины
+@import "global/variables.scss";
+@import "global/mixins.scss";
+
+// Шрифты
+@import "global/fonts.scss";
+
+// Глобальные стили
+@import "global/global.scss";
+@import "blocks/visually-hidden.scss";
+
+// Стили страницы
+@import "blocks/page.scss";
+@import "blocks/container.scss";
+@import "blocks/title.scss";
+@import "blocks/subtitle.scss";
+@import "blocks/button.scss";
+
+// Стили шапки
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";
+
+// Стили промо-блока
+@import "blocks/promo.scss";
+
+// Стили блока программ питания
+@import "blocks/programs.scss";
+
+// Стили блока преимуществ
+@import "blocks/advantages.scss";
+
+// Стили блока примера
+@import "blocks/example.scss";
+@import "blocks/slider.scss";
+
+// Стили блока контактов
+@import "blocks/contacts.scss";
+
+// Стили блока каталога
+@import "blocks/catalog.scss";
+@import "blocks/product.scss";
+@import "blocks/product-more.scss";
+
+// Стили блока дополнительных товаров
+@import "blocks/upsell.scss";
+@import "blocks/product-upsell.scss";
+@import "blocks/gift.scss";
+
+// Стили блока формы
+@import "blocks/form.scss";
+
+// Стили подвала
+@import "blocks/page-footer.scss";
+@import "blocks/socials.scss";
+@import "blocks/copyright.scss";

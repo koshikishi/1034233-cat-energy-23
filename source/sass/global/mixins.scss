@@ -1,0 +1,28 @@
+// Выводит правило font-face для подключения шрифта с указанными параметрами
+@mixin font-face($family, $weightName, $weight: 400) {
+  @font-face {
+    font-style: normal;
+    font-weight: $weight;
+    font-family: $family;
+    font-display: swap;
+    src:
+      local($family + " " + $weightName),
+      local($family + "-" + $weightName),
+      url("../fonts/#{to-lower-case($family + $weightName)}.woff2") format("woff2"),
+      url("../fonts/#{to-lower-case($family + $weightName)}.woff") format("woff");
+  }
+}
+
+// Задаёт базовую макро-сетку
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+}
+
+// Сбрасывает стили списка
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}

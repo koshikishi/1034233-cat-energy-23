@@ -1,0 +1,31 @@
+.product-upsell {
+  display: grid;
+  padding-top: 13px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid $colorBorder;
+}
+
+.product-upsell__name {
+  font: 400 16px/1 "Oswald", "Arial", sans-serif;
+  color: $colorGreyDarkSpecial200;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+  }
+}
+
+.product-upsell__features {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 14px;
+
+  th {
+    font-weight: 400;
+    text-align: left;
+  }
+
+  td {
+    text-align: right;
+  }
+}

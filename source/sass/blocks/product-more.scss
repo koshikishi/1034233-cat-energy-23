@@ -1,0 +1,27 @@
+.product-more {
+  padding: 20px 20px 25px;
+  border-bottom: 1px solid $colorBorder;
+}
+
+.product-more__info {
+  text-align: center;
+}
+
+.product-more__title {
+  font: 400 16px/20px "Oswald", "Arial", sans-serif;
+  color: $colorGreyDarkSpecial300;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+  }
+}
+
+.product-more__text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.product-more__button {
+  width: 100%;
+}
