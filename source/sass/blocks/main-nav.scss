@@ -13,6 +13,7 @@
   }
 
   @media (min-width: $deviceDesktop) {
+    position: relative;
     max-width: 500px;
   }
 }
@@ -61,6 +62,10 @@
 
   @media (min-width: $deviceDesktop) {
     justify-content: flex-end;
+
+    &--index {
+      color: $colorWhite;
+    }
   }
 }
 
@@ -105,10 +110,11 @@
   @media (min-width: $deviceDesktop) {
     font-size: 20px;
     line-height: 1.5;
-    color: $colorWhite;
 
-    &--current {
-      border-bottom-color: $colorWhite;
+    .main-nav__list--index & {
+      &--current {
+        border-bottom-color: $colorWhite;
+      }
     }
   }
 }

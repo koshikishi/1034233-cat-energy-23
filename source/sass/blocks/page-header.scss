@@ -2,18 +2,27 @@
   position: relative;
   box-sizing: border-box;
   min-height: 65px;
-  padding-top: 10px;
+  margin-bottom: 22px;
   background-color: $colorWhite;
 
   @media (min-width: $deviceTablet) {
     min-height: 102px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    margin-bottom: 0;
   }
 
   @media (min-width: $deviceDesktop) {
     min-height: 136px;
-    padding-top: 53px;
+    margin-bottom: 82px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+      background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+    }
   }
 }
 
@@ -21,15 +30,19 @@
   @include grid-container;
 
   grid-template-rows: 45px 10px auto;
+  padding-top: 10px;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: 30px 174px 1fr 30px;
     grid-template-rows: 54px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   @media (min-width: $deviceDesktop) {
     grid-template-columns: 1fr repeat(2, 610px) 1fr;
     grid-template-rows: 59px;
+    padding-top: 53px;
   }
 }
 
