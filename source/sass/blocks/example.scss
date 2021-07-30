@@ -64,12 +64,13 @@
   @media (min-width: $deviceTablet) {
     display: flex;
     justify-content: space-between;
-    width: auto;
-    margin: 0;
+    width: 708px;
   }
 
   @media (min-width: $deviceDesktop) {
     display: block;
+    width: auto;
+    margin: 0;
   }
 }
 

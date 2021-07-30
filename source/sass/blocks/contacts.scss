@@ -9,21 +9,48 @@
 }
 
 .contacts__info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  box-sizing: border-box;
   grid-column: 1 / -1;
   padding: 25px 20px;
+
+  @media (min-width: $deviceTablet) {
+    column-gap: 284px;
+    padding: 62px 72px 50px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    position: relative;
+    grid-column: 2 / -2;
+    grid-row-start: 1;
+    column-gap: 82px;
+    width: 570px;
+    height: 200px;
+    margin-top: 95px;
+    padding-right: 76px;
+    padding-left: 76px;
+    background-color: $colorWhite;
+  }
 }
 
 .contacts__text {
+  width: 50%;
   margin-top: 0;
+  margin-right: 20px;
   margin-bottom: 0;
-  font: 16px/20px "Oswald", "Arial", sans-serif;
+  font: 16px/20px $fontFamilyTitle;
   color: $colorGreyDarkSpecial300;
   text-transform: uppercase;
+
+  @media (min-width: $deviceTablet) {
+    margin-right: 0;
+    font-size: 20px;
+    line-height: 21px;
+  }
 }
 
 .contacts__address {
+  width: 50%;
   font-style: normal;
   line-height: 20px;
 
@@ -31,9 +58,33 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
+  @media (min-width: $deviceTablet) {
+    text-align: right;
+
+    p {
+      margin-bottom: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: $deviceDesktop) {
+    text-align: left;
+  }
 }
 
 .contacts__map {
   grid-column: 1 / -1;
   height: 362px;
+
+  @media (min-width: $deviceTablet) {
+    height: 400px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-row-start: 1;
+  }
 }
