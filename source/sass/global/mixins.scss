@@ -17,6 +17,14 @@
 @mixin grid-container {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: 1fr 1220px 1fr;
+  }
 }
 
 // Сбрасывает стили списка

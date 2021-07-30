@@ -4,12 +4,33 @@
   min-height: 65px;
   padding-top: 10px;
   background-color: $colorWhite;
+
+  @media (min-width: $deviceTablet) {
+    min-height: 102px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    min-height: 136px;
+    padding-top: 53px;
+  }
 }
 
 .page-header__wrapper {
   @include grid-container;
 
   grid-template-rows: 45px 10px auto;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: 30px 174px 1fr 30px;
+    grid-template-rows: 54px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: 1fr repeat(2, 610px) 1fr;
+    grid-template-rows: 59px;
+  }
 }
 
 .page-header__logo {
@@ -21,5 +42,25 @@
 
   img {
     display: block;
+  }
+
+  @media (min-width: $deviceTablet) {
+    width: 174px;
+    height: 52px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    width: 202px;
+    height: 59px;
+  }
+}
+
+.page-header__main-nav {
+  @media (min-width: $deviceTablet) {
+    margin-left: 90px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-left: 0;
   }
 }
