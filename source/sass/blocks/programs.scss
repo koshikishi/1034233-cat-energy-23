@@ -1,13 +1,30 @@
 .programs {
   @include grid-container;
+
+  margin-bottom: 22px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 70px;
+  }
 }
 
 .programs__list {
   display: grid;
-  grid-auto-rows: 266px;
   grid-column: 2 / -2;
   gap: 20px;
-  margin-bottom: 22px;
+
+  @media (min-width: $deviceTablet) {
+    gap: 30px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: repeat(2, 570px);
+    gap: 80px;
+  }
 }
 
 .programs__item {
@@ -15,20 +32,43 @@
   min-width: 280px;
   padding: 30px 20px 10px;
   background-color: $colorGrey;
+
+  @media (min-width: $deviceTablet) {
+    padding: 75px 316px 53px 52px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    padding: 77px 52px 55px;
+  }
 }
 
 .programs__title {
-  font: 400 24px/37px "Oswald", "Arial", sans-serif;
+  font: 400 24px/37px $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 36px;
+    line-height: 1;
+  }
 }
 
 .programs__description {
   border-bottom: 1px solid $colorLine;
+
+  @media (min-width: $deviceTablet) {
+    color: $colorBlack;
+    border: none;
+  }
 }
 
 .programs__link {
-  font: 16px/1 "Oswald", "Arial", sans-serif;
+  font: 16px/1 $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
