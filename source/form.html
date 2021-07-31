@@ -39,7 +39,7 @@
         <form class="form__main" action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="form__fieldset">
             <div class="form__inner">
-              <div class="form__fields">
+              <div class="form__fields form__fields--narrow">
                 <div class="form__field">
                   <label class="form__label" for="form_cat_name">Имя:*</label>
                   <input class="form__input" id="form_cat_name" type="text" name="cat_name" required>
@@ -71,8 +71,10 @@
           </fieldset>
           <fieldset class="form__fieldset">
             <div class="form__inner">
-              <legend class="form__subtitle subtitle">Контактные данные (владельца кота)</legend>
-              <div class="form__fields">
+              <legend class="form__subtitle subtitle">
+                <span>Контактные данные (владельца кота)</span>
+              </legend>
+              <div class="form__fields form__fields--cols">
                 <div class="form__field">
                   <label class="form__label" for="form_email">E-mail:*</label>
                   <input class="form__input" id="form_email" type="email" name="email" required>
@@ -86,7 +88,9 @@
           </fieldset>
           <fieldset class="form__fieldset">
             <div class="form__inner">
-              <legend class="form__subtitle subtitle">Комментарий</legend>
+              <legend class="form__subtitle subtitle">
+                <span>Комментарий</span>
+              </legend>
               <div class="form__fields">
                 <div class="form__field">
                   <textarea class="form__textarea" name="comment" placeholder="Расскажите обо всех повадках кота" aria-label="Расскажите обо всех повадках кота"></textarea>
@@ -96,7 +100,9 @@
           </fieldset>
           <fieldset class="form__fieldset">
             <div class="form__inner">
-              <legend class="form__subtitle subtitle">Дополнительно</legend>
+              <legend class="form__subtitle subtitle">
+                <span>Дополнительно</span>
+              </legend>
               <div class="form__options">
                 <div class="form__option">
                   <input class="form__checkbox" id="form_cat_sweetener" type="checkbox" name="cat_sweetener" checked>
@@ -116,7 +122,7 @@
                 </div>
               </div>
               <div class="form__bottom">
-                <button class="button" type="submit">Отправить заявку</button>
+                <button class="button button--medium" type="submit">Отправить заявку</button>
                 <small class="form__legend">* — Обязательные поля</small>
               </div>
             </div>

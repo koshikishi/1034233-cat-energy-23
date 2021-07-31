@@ -2,11 +2,27 @@
   @include grid-container;
 
   margin-bottom: 30px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 72px;
+
+    @media (max-width: $deviceDesktop - 1) {
+      grid-template-columns: 70px 1fr 67px;
+    }
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 82px;
+  }
 }
 
 .form__header {
   grid-column: 2 / -2;
   margin-bottom: 35px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 65px;
+  }
 }
 
 .form__title {
@@ -14,9 +30,15 @@
 }
 
 .form__description {
-  font: 14px/18px "Oswald", "Arial", sans-serif;
+  font: 14px/18px $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
+
+  @media (min-width: $deviceTablet) {
+    width: 330px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .form__main {
@@ -32,15 +54,26 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 65px;
+  }
 }
 
 .form__inner {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  @include grid-container;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: 70px 1fr 67px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: 1fr 570px 80px 570px 1fr;
+  }
 }
 
 .form__subtitle {
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
   margin-bottom: 35px;
 }
 
@@ -48,6 +81,17 @@
   display: grid;
   grid-column: 2 / -2;
   gap: 14px;
+
+  @media (min-width: $deviceDesktop) {
+    &--narrow {
+      grid-column-end: initial;
+    }
+
+    &--cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 80px;
+    }
+  }
 }
 
 .form__field {
@@ -56,7 +100,7 @@
 }
 
 .form__label {
-  font: 16px/18px "Oswald", "Arial", sans-serif;
+  font: 16px/18px $fontFamilyTitle;
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
@@ -111,16 +155,26 @@
       height: 30px;
     }
   }
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .form__input {
   flex-grow: 1;
   margin-left: 13px;
   padding: 13px 15px;
-  font: 16px/18px "Oswald", "Arial", sans-serif;
+  font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
   border: 1px solid $colorBorderInput;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .form__group {
@@ -131,6 +185,17 @@
   padding: 20px;
   border: solid $colorLine;
   border-width: 1px 0;
+
+  @media (min-width: $deviceTablet) {
+    grid-column: 2 / -2;
+    margin-top: 72px;
+    border-width: 1px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-column-start: initial;
+    margin-top: 0;
+  }
 }
 
 .form__option {
@@ -181,11 +246,16 @@
   box-sizing: border-box;
   height: 150px;
   padding: 13px 15px;
-  font: 16px/18px "Oswald", "Arial", sans-serif;
+  font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
   border: 1px solid $colorBorderInput;
   resize: none;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .form__options {
@@ -193,15 +263,38 @@
   gap: 13px;
   grid-column: 2 / -2;
   margin-bottom: 35px;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 61px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+  }
 }
 
 .form__bottom {
   display: grid;
   grid-column: 2 / -2;
   gap: 20px;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 61px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    column-gap: 80px;
+  }
 }
 
 .form__legend {
   color: $colorBlack;
   text-align: center;
+
+  @media (min-width: $deviceTablet) {
+    text-align: left;
+  }
 }
