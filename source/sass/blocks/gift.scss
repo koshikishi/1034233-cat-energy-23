@@ -3,6 +3,16 @@
   min-height: 289px;
   padding: 186px 58px 43px;
   background: url("../img/gift-mobile.jpg") center / cover no-repeat $colorPrimary100;
+
+  @media (min-width: $deviceTablet) {
+    min-height: 200px;
+    padding: 70px 120px 70px calc(50% + 69px);
+  }
+
+  @media (min-width: $deviceDesktop) {
+    width: 245px;
+    padding: 185px 42px 42px;
+  }
 }
 
 .gift__description {
@@ -12,4 +22,12 @@
   line-height: 20px;
   color: $colorWhite;
   text-align: center;
+
+  @media (min-width: $deviceTablet) {
+    text-align: left;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    text-align: center;
+  }
 }
