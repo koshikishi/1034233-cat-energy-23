@@ -68,7 +68,7 @@
   }
 
   @media (min-width: $deviceDesktop) {
-    grid-template-columns: 1fr 570px 80px 570px 1fr;
+    grid-template-columns: 1fr repeat(2, 610px) 1fr;
   }
 }
 
@@ -85,6 +85,7 @@
   @media (min-width: $deviceDesktop) {
     &--narrow {
       grid-column-end: initial;
+      width: 570px;
     }
 
     &--cols {
@@ -179,6 +180,7 @@
 
 .form__group {
   display: grid;
+  box-sizing: border-box;
   gap: 13px;
   grid-column: 1 / -1;
   margin-top: 25px;
@@ -194,6 +196,8 @@
 
   @media (min-width: $deviceDesktop) {
     grid-column-start: initial;
+    justify-self: end;
+    width: 570px;
     margin-top: 0;
   }
 }
