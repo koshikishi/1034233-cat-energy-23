@@ -5,23 +5,38 @@
   margin-bottom: 22px;
   background-color: $colorWhite;
 
+  &--inner {
+    margin-bottom: 25px;
+    border-bottom: 1px solid $colorLine;
+  }
+
   @media (min-width: $deviceTablet) {
     min-height: 102px;
-    margin-bottom: 0;
+
+    &--inner {
+      margin-bottom: 40px;
+      border: none;
+    }
   }
 
   @media (min-width: $deviceDesktop) {
     min-height: 136px;
     margin-bottom: 82px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 50%;
-      background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+    &--index {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+        background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+      }
+    }
+
+    &--inner {
+      margin-bottom: 30px;
     }
   }
 }
