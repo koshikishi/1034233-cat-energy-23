@@ -8,7 +8,6 @@
   }
 
   @media (min-width: $deviceDesktop) {
-    grid-template-columns: 1fr 975px 245px 1fr;
     margin-bottom: 85px;
   }
 }
@@ -22,30 +21,30 @@
   }
 }
 
-.upsell__list {
+.upsell__wrapper {
   display: grid;
   grid-column: 2 / -2;
-  margin-bottom: 35px;
+  row-gap: 35px;
+
+  @media (min-width: $deviceTablet) {
+    row-gap: 70px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: 896px 245px;
+    column-gap: 79px;
+  }
+}
+
+.upsell__list {
   border-top: 1px solid $colorGreySpecial100;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 70px;
     border: 1px solid $colorGreySpecial100;
   }
 
   @media (min-width: $deviceDesktop) {
-    grid-column: 2 / span 1;
-    width: 896px;
-    margin-bottom: 0;
     border: none;
     border-top: 1px solid $colorGreySpecial100;
-  }
-}
-
-.upsell__gift {
-  grid-column: 2 / -2;
-
-  @media (min-width: $deviceDesktop) {
-    grid-column: -2 / -3;
   }
 }

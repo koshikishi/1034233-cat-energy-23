@@ -44,7 +44,8 @@
 .page-header__wrapper {
   @include grid-container;
 
-  grid-template-rows: 45px 10px auto;
+  grid-template-rows: 45px auto;
+  row-gap: 10px;
   padding-top: 10px;
 
   @media (min-width: $deviceTablet) {

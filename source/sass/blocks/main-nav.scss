@@ -1,9 +1,10 @@
 .main-nav {
   @include grid-container;
 
-  grid-template-rows: 45px 10px auto;
+  grid-template-rows: 45px auto;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
+  row-gap: 10px;
 
   @media (min-width: $deviceTablet) {
     display: block;
