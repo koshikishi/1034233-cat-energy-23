@@ -1,23 +1,62 @@
 .product {
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(2, 1fr);
   padding: 20px 20px 25px;
   border-bottom: 1px solid $colorBorder;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: 1fr;
+    padding: 0 36px 39px;
+    background-color: $colorGrey;
+    border: none;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    padding: 0 39px 40px;
+  }
 }
 
 .product__image {
   img {
     display: block;
   }
+
+  @media (min-width: $deviceTablet) {
+    justify-self: center;
+    margin-top: -73px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-top: -80px;
+  }
+}
+
+.product__info {
+  margin-bottom: 13px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 33px;
+  }
 }
 
 .product__name {
-  font: 400 16px/20px "Oswald", "Arial", sans-serif;
+  font: 400 16px/20px $fontFamilyTitle;
   color: $colorGreyDarkSpecial200;
   text-transform: uppercase;
 
   a {
     color: inherit;
+  }
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    line-height: 21px;
   }
 }
 
@@ -34,6 +73,14 @@
 
   td {
     text-align: right;
+  }
+
+  @media (min-width: $deviceTablet) {
+    font-size: 16px;
+
+    tr {
+      border-bottom: 1px solid $colorGreySpecial100;
+    }
   }
 }
 

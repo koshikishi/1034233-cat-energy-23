@@ -44,6 +44,8 @@
   }
 
   @media (min-width: $deviceTablet) {
+    min-width: initial;
+
     &--small {
       width: 244px;
       font-size: 20px;
