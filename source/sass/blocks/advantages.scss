@@ -7,6 +7,10 @@
 .advantages__title {
   grid-column: 2 / -2;
   margin-bottom: 35px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 70px;
+  }
 }
 
 .advantages__list {
@@ -16,10 +20,21 @@
   grid-column: 2 / -2;
   gap: 20px;
   counter-reset: number;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 77px 58px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 73px;
+  }
 }
 
 .advantages__item {
   position: relative;
+  box-sizing: border-box;
   min-height: 60px;
   padding-left: 80px;
   counter-increment: number;
@@ -32,5 +47,31 @@
     width: 60px;
     height: 60px;
     background-color: $colorPrimary100;
+  }
+
+  @media (min-width: $deviceTablet) {
+    min-height: 280px;
+    padding-top: 110px;
+    padding-right: 80px;
+    padding-left: 0;
+
+    &::before {
+      width: 80px;
+      height: 80px;
+    }
+
+    &::after {
+      content: counter(number);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      font: 280px/1 $fontFamilyTitle;
+      color: $colorGrey;
+    }
+  }
+
+  @media (min-width: $deviceTablet) {
+    padding-right: 5px;
   }
 }

@@ -4,6 +4,18 @@
   grid-template-rows: 45px 10px auto;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
+
+  @media (min-width: $deviceTablet) {
+    display: block;
+    grid-column: -2 / -3;
+    place-self: center end;
+    min-width: 440px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    position: relative;
+    max-width: 500px;
+  }
 }
 
 .main-nav__toggle {
@@ -14,6 +26,10 @@
   padding: 0;
   background: none;
   border: none;
+
+  @media (min-width: $deviceTablet) {
+    display: none;
+  }
 }
 
 .main-nav__list {
@@ -34,18 +50,71 @@
   &--shown {
     display: block;
   }
+
+  @media (min-width: $deviceTablet) {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 35px;
+    background: none;
+    border: none;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    justify-content: flex-end;
+
+    &--index {
+      color: $colorWhite;
+    }
+  }
 }
 
 .main-nav__item {
   display: flex;
   box-sizing: border-box;
   min-height: 66px;
-  font: 500 20px/20px "Oswald", "Arial", sans-serif;
+  font: 500 20px/20px $fontFamilyTitle;
   text-align: center;
+  text-transform: uppercase;
   border-bottom: 1px solid $colorBorder;
 
   a {
     margin: auto;
     color: inherit;
+  }
+
+  @media (min-width: $deviceTablet) {
+    display: block;
+    min-height: initial;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+
+    &--current {
+      border-bottom: 2px solid $colorPrimary100;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  @media (min-width: $deviceDesktop) {
+    font-size: 20px;
+    line-height: 1.5;
+
+    .main-nav__list--index & {
+      &--current {
+        border-bottom-color: $colorWhite;
+      }
+    }
   }
 }

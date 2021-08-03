@@ -2,8 +2,16 @@
   display: flex;
   align-items: center;
   height: 78px;
+
+  @media (min-width: $deviceTablet) {
+    height: auto;
+  }
 }
 
 .copyright__link {
   color: inherit;
+
+  @media (min-width: $deviceTablet) {
+    padding-right: 50px;
+  }
 }

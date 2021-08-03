@@ -1,6 +1,11 @@
 .page {
   font: 14px/18px "Arial", sans-serif;
   color: $colorGreyDarkSpecial100;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .page__body {

@@ -12,11 +12,11 @@
         <a class="page-header__logo">
           <img src="img/logo-header-mobile.svg" alt="Логотип «Кэт энерджи»" width="191" height="38">
         </a>
-        <nav class="main-nav">
+        <nav class="page-header__main-nav main-nav">
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
-          <ul class="main-nav__list main-nav__list--shown">
+          <ul class="main-nav__list main-nav__list--index main-nav__list--shown">
             <li class="main-nav__item main-nav__item--current">
               <a>Главная</a>
             </li>
@@ -29,15 +29,15 @@
           </ul>
         </nav>
       </div>
-    </header>
-    <main class="page-main">
       <section class="promo">
         <div class="promo__wrapper">
           <h1 class="promo__title title">Функциональное питание для котов</h1>
           <p class="promo__slogan">Занялся собой? Займись котом!</p>
-          <a class="button" href="form.html">Подобрать программу</a>
+          <a class="button button--small" href="form.html">Подобрать программу</a>
         </div>
       </section>
+    </header>
+    <main class="page-main">
       <section class="programs">
         <h2 class="visually-hidden">Программы питания «Кэт энерджи»</h2>
         <div class="programs__list">
@@ -85,21 +85,20 @@
         </div>
         <div class="example__slider slider">
           <ul class="slider__list">
-            <li class="slider__item">
+            <li class="slider__item slider__item--before">
               <img src="img/slider-before-mobile.png" alt="Фотография кота Бориса до программы питания «Кэт энерджи»" width="320" height="242">
             </li>
-            <li class="slider__item">
+            <li class="slider__item slider__item--after">
               <img src="img/slider-after-mobile.png" alt="Фотография кота Бориса после программы питания «Кэт энерджи»" width="320" height="242">
             </li>
           </ul>
           <div class="slider__controls">
             <button class="slider__button" type="button">Было</button>
-            <div class="slider__range">
-              <div class="slider__track">
-                <button class="slider__thumb" type="button">
-                  <span class="visually-hidden">Смотреть изображения до / после</span>
-                </button>
-              </div>
+            <div class="slider__control">
+              <button class="slider__toggle slider__toggle--before" type="button">
+                <span class="visually-hidden">Смотреть изображение до / после</span>
+              </button>
+              <input class="slider__range" type="range" name="slider_range" min="0" max="100" value="50" aria-label="Смотреть изображение до / после">
             </div>
             <button class="slider__button" type="button">Стало</button>
           </div>

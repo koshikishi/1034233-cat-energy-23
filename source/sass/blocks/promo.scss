@@ -2,7 +2,6 @@
   @include grid-container;
 
   position: relative;
-  margin-bottom: 22px;
 
   &::before {
     content: "";
@@ -10,25 +9,65 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: -1;
     height: 302px;
     background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    left: 0;
+    height: 270px;
+    background: url("../img/promo-can-mobile.png") center / 280px no-repeat;
+  }
+
+  @media (min-width: $deviceTablet) {
+    &::before {
+      content: none;
+    }
+
+    &::after {
+      bottom: 0;
+      height: 609px;
+    }
   }
 }
 
 .promo__wrapper {
+  position: relative;
   grid-column: 2 / -2;
   min-height: 480px;
   text-align: center;
-  background: url("../img/promo-can-mobile.png") center bottom 40px / 280px no-repeat;
+
+  @media (min-width: $deviceTablet) {
+    width: 420px;
+    min-height: 848px;
+    margin-left: 90px;
+    text-align: left;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-left: 80px;
+  }
 }
 
 .promo__title {
   color: $colorWhite;
+
+  @media (min-width: $deviceTablet) {
+    color: $colorBlack;
+  }
 }
 
 .promo__slogan {
-  font: 14px/1 "Oswald", "Arial", sans-serif;
+  font: 14px/1 $fontFamilyTitle;
   color: $colorWhite;
   text-transform: uppercase;
+
+  @media (min-width: $deviceTablet) {
+    font-size: 20px;
+    color: $colorBlack;
+  }
 }
