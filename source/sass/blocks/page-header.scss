@@ -2,28 +2,28 @@
   position: relative;
   box-sizing: border-box;
   min-height: 65px;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
   background-color: $colorWhite;
+  border-bottom: 1px solid $colorLine;
 
-  &--inner {
-    margin-bottom: 25px;
-    border-bottom: 1px solid $colorLine;
+  &--index {
+    margin-bottom: 22px;
+    border: none;
   }
 
   @media (min-width: $deviceTablet) {
     min-height: 102px;
-
-    &--inner {
-      margin-bottom: 40px;
-      border: none;
-    }
+    margin-bottom: 40px;
+    border: none;
   }
 
   @media (min-width: $deviceDesktop) {
     min-height: 136px;
-    margin-bottom: 82px;
+    margin-bottom: 30px;
 
     &--index {
+      margin-bottom: 82px;
+
       &::before {
         content: "";
         position: absolute;
@@ -33,10 +33,6 @@
         left: 50%;
         background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
       }
-    }
-
-    &--inner {
-      margin-bottom: 30px;
     }
   }
 }

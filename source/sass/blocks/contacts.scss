@@ -1,10 +1,10 @@
 .contacts {
   @include grid-container;
 
-  background-color: $colorWhite;
+  background-color: $colorGrey;
 
-  &--inner-page {
-    background-color: $colorGrey;
+  &--index {
+    background-color: $colorWhite;
   }
 }
 
