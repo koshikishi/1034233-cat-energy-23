@@ -65,7 +65,7 @@
       <section class="example">
         <div class="example__inner">
           <h2 class="example__title title">Живой пример</h2>
-          <p class="example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+          <p class="example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по&#8209;прежнему спит по 16 часов в день.</p>
           <div class="example__result">
             <dl class="example__list">
               <div class="example__item">
@@ -83,9 +83,9 @@
             </p>
           </div>
         </div>
-        <div class="example__slider slider">
+        <div class="example__slider slider slider--nojs">
           <ul class="slider__list">
-            <li class="slider__item slider__item--before">
+            <li class="slider__item slider__item--before slider__item--shown">
               <img src="img/slider-before-mobile.png" alt="Фотография кота Бориса до программы питания «Кэт энерджи»" width="320" height="242">
             </li>
             <li class="slider__item slider__item--after">
@@ -93,14 +93,18 @@
             </li>
           </ul>
           <div class="slider__controls">
-            <button class="slider__button" type="button">Было</button>
+            <button class="slider__button slider__button--before" type="button">
+              <span>Было</span>
+            </button>
             <div class="slider__control">
               <button class="slider__toggle slider__toggle--before" type="button">
                 <span class="visually-hidden">Смотреть изображение до / после</span>
               </button>
               <input class="slider__range" type="range" name="slider_range" min="0" max="100" value="50" aria-label="Смотреть изображение до / после">
             </div>
-            <button class="slider__button" type="button">Стало</button>
+            <button class="slider__button slider__button--after" type="button">
+              <span>Стало</span>
+            </button>
           </div>
         </div>
       </section>
