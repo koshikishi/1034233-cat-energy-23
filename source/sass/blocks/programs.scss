@@ -1,7 +1,7 @@
 .programs {
   @include grid-container;
 
-  margin-bottom: 22px;
+  margin-bottom: 27px;
 
   @media (min-width: $deviceTablet) {
     margin-bottom: 45px;
@@ -28,46 +28,155 @@
 }
 
 .programs__item {
+  position: relative;
   box-sizing: border-box;
   min-width: 280px;
-  padding: 30px 20px 10px;
+  padding: 30px 20px 18px;
   background-color: $colorGrey;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 13px;
+    width: 67px;
+    height: 53px;
+    background: bottom / contain no-repeat;
+  }
+
+  &--slim {
+    &::before {
+      background-image: url("../img/programs-slim.svg");
+    }
+  }
+
+  &--pro {
+    &::before {
+      background-image: url("../img/programs-pro.svg");
+    }
+  }
+
   @media (min-width: $deviceTablet) {
-    padding: 75px 316px 53px 52px;
+    min-height: 280px;
+    padding: 77px 316px 53px 52px;
+
+    &::before {
+      top: 50%;
+      right: 28px;
+      left: auto;
+      width: 268px;
+      height: 211px;
+      transform: translateY(-50%);
+    }
   }
 
   @media (min-width: $deviceDesktop) {
     padding: 77px 52px 55px;
+
+    &::before {
+      top: 41px;
+      right: auto;
+      left: 34px;
+      width: 134px;
+      height: 106px;
+      transform: none;
+    }
   }
 }
 
 .programs__title {
+  margin-top: 0;
+  margin-bottom: 29px;
+  margin-left: 71px;
   font: 400 24px/37px $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
 
   @media (min-width: $deviceTablet) {
+    margin-bottom: 24px;
+    margin-left: 0;
     font-size: 36px;
     line-height: 1;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 73px;
+    margin-left: 162px;
   }
 }
 
 .programs__description {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 22px;
   border-bottom: 1px solid $colorLine;
 
   @media (min-width: $deviceTablet) {
+    margin-bottom: 48px;
+    padding-bottom: 0;
     color: $colorBlack;
     border: none;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 23px;
   }
 }
 
 .programs__link {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  min-height: 24px;
+  padding-top: 4px;
+  padding-right: 48px;
+  padding-bottom: 4px;
   font: 16px/1 $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    width: 18px;
+    height: 2px;
+    background-color: currentColor;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 7px;
+    height: 12px;
+    background-color: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      right: 6px;
+      width: 26px;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   @media (min-width: $deviceTablet) {
+    padding-right: 58px;
     font-size: 20px;
     line-height: 1.5;
   }
