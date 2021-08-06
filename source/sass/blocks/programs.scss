@@ -1,14 +1,14 @@
 .programs {
   @include grid-container;
 
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 
   @media (min-width: $deviceTablet) {
     margin-bottom: 45px;
   }
 
   @media (min-width: $deviceDesktop) {
-    margin-bottom: 70px;
+    margin-bottom: 71px;
   }
 }
 
