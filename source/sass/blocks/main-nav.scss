@@ -1,15 +1,17 @@
 .main-nav {
-  @include grid-container;
+  place-self: center end;
 
-  grid-template-rows: 45px auto;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  row-gap: 10px;
+  @media (max-width: $deviceTablet - 1) {
+    &--nojs {
+      grid-column: 1 / -1;
+      grid-row-start: 2;
+      place-self: initial;
+      margin-top: 10px;
+      margin-bottom: -10px;
+    }
+  }
 
   @media (min-width: $deviceTablet) {
-    display: block;
-    grid-column: -2 / -3;
-    place-self: center end;
     min-width: 440px;
   }
 
@@ -20,13 +22,63 @@
 }
 
 .main-nav__toggle {
-  grid-column-end: -2;
-  place-self: center end;
+  position: relative;
+  display: block;
   width: 24px;
   height: 24px;
+  margin-bottom: 1px;
   padding: 0;
+  color: $colorBlack;
   background: none;
   border: none;
+  cursor: pointer;
+  appearance: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  .main-nav--opened & {
+    &::before {
+      top: 12px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 12px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .main-nav--closed & {
+    &::before {
+      top: 3px;
+      box-shadow: 0 8px currentColor;
+    }
+
+    &::after {
+      bottom: 3px;
+    }
+  }
+
+  .main-nav--nojs & {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (min-width: $deviceTablet) {
     display: none;
@@ -40,16 +92,23 @@
   top: 65px;
   left: 0;
   z-index: 1;
-  display: none;
-  grid-column: 1 / -1;
-  grid-row-end: -1;
   width: 100%;
   color: $colorBlack;
   background-color: $colorWhite;
-  border-top: 1px solid $colorBorder;
+  border-top: 1px solid $colorBorder200;
 
-  &--shown {
-    display: block;
+  @media (max-width: $deviceTablet - 1) {
+    .main-nav--closed & {
+      display: none;
+    }
+
+    .main-nav--opened & {
+      display: block;
+    }
+
+    .main-nav--nojs & {
+      position: static;
+    }
   }
 
   @media (min-width: $deviceTablet) {
@@ -57,31 +116,42 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 35px;
+    margin-top: 6px;
     background: none;
     border: none;
   }
 
   @media (min-width: $deviceDesktop) {
     justify-content: flex-end;
+    margin-top: 4px;
 
-    &--index {
+    .main-nav--index & {
       color: $colorWhite;
     }
   }
 }
 
 .main-nav__item {
-  display: flex;
   box-sizing: border-box;
   min-height: 66px;
   font: 500 20px/20px $fontFamilyTitle;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder200;
 
   a {
-    margin: auto;
+    display: block;
+    padding: 22px 20px 23px;
     color: inherit;
+
+    &[href]:hover,
+    &[href]:focus {
+      opacity: 0.6;
+    }
+
+    &[href]:active {
+      opacity: 0.3;
+    }
   }
 
   @media (min-width: $deviceTablet) {
@@ -93,18 +163,22 @@
     border: none;
 
     &--current {
-      border-bottom: 2px solid $colorPrimary100;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: $colorPrimary100;
+        pointer-events: none;
+      }
     }
 
     a {
-      &:hover,
-      &:focus {
-        opacity: 0.6;
-      }
-
-      &:active {
-        opacity: 0.3;
-      }
+      padding: 10px 0;
     }
   }
 
@@ -112,9 +186,16 @@
     font-size: 20px;
     line-height: 1.5;
 
-    .main-nav__list--index & {
+    a {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .main-nav--index & {
       &--current {
-        border-bottom-color: $colorWhite;
+        &::before {
+          background-color: $colorWhite;
+        }
       }
     }
   }

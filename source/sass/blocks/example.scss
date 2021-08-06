@@ -6,7 +6,7 @@
   @media (min-width: $deviceTablet) {
     position: relative;
     background: none;
-    border-top: 1px solid $colorBorder;
+    border-top: 1px solid $colorBorder100;
 
     &::before {
       content: "";

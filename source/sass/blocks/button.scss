@@ -30,7 +30,7 @@
 
     &:hover,
     &:focus {
-      background-color: $colorBorder;
+      background-color: $colorBorder100;
     }
 
     &:active {
@@ -38,16 +38,21 @@
     }
   }
 
-  &--small {
+  &--promo {
     font-size: 14px;
     line-height: 18px;
   }
 
   @media (min-width: $deviceTablet) {
     min-width: initial;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    &--small {
-      width: 244px;
+    &--promo {
+      min-width: 244px;
+      width: auto;
+      padding-top: 17px;
+      padding-bottom: 17px;
       font-size: 20px;
       line-height: 1;
     }

@@ -3,7 +3,7 @@
   box-sizing: border-box;
   flex-direction: column;
   padding: 20px 20px 25px;
-  border-bottom: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder100;
 
   @media (min-width: $deviceTablet) {
     padding: 0 36px 39px;

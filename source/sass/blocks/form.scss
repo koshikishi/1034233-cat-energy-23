@@ -170,7 +170,7 @@
   font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
-  border: 1px solid $colorBorderInput;
+  border: 1px solid $colorBorder300;
 
   @media (min-width: $deviceTablet) {
     font-size: 20px;
@@ -253,7 +253,7 @@
   font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
-  border: 1px solid $colorBorderInput;
+  border: 1px solid $colorBorder300;
   resize: none;
 
   @media (min-width: $deviceTablet) {

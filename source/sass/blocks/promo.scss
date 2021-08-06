@@ -2,6 +2,7 @@
   @include grid-container;
 
   position: relative;
+  min-height: 480px;
 
   &::before {
     content: "";
@@ -10,20 +11,22 @@
     right: 0;
     left: 0;
     height: 302px;
-    background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+    background: url("../img/promo-bg-mobile.png") calc(50% - 34px) 0 / auto 302px no-repeat $colorPrimary200;
   }
 
   &::after {
     content: "";
     position: absolute;
     right: 0;
-    bottom: 40px;
+    bottom: 43px;
     left: 0;
     height: 270px;
     background: url("../img/promo-can-mobile.png") center / 280px no-repeat;
   }
 
   @media (min-width: $deviceTablet) {
+    min-height: 848px;
+
     &::before {
       content: none;
     }
@@ -31,44 +34,83 @@
     &::after {
       bottom: 0;
       height: 609px;
+      background-size: auto 609px;
+    }
+  }
+
+  @media (min-width: $deviceDesktop) {
+    min-height: 529px;
+
+    &::after {
+      right: calc(50% - 390px);
+      bottom: 54px;
+      left: auto;
+      width: 552px;
+      height: 499px;
+      background-size: 552px auto;
     }
   }
 }
 
 .promo__wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
   grid-column: 2 / -2;
-  min-height: 480px;
+  margin-top: 27px;
   text-align: center;
 
   @media (min-width: $deviceTablet) {
+    display: block;
+    z-index: 1;
     width: 420px;
-    min-height: 848px;
+    margin-top: 38px;
     margin-left: 90px;
     text-align: left;
   }
 
   @media (min-width: $deviceDesktop) {
-    min-height: 560px;
+    margin-top: 58px;
     margin-left: 80px;
   }
 }
 
 .promo__title {
+  margin-bottom: 25px;
   color: $colorWhite;
 
   @media (min-width: $deviceTablet) {
+    margin-bottom: 41px;
     color: $colorBlack;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 40px;
   }
 }
 
 .promo__slogan {
+  margin-top: 0;
+  margin-bottom: auto;
   font: 14px/1 $fontFamilyTitle;
   color: $colorWhite;
   text-transform: uppercase;
 
   @media (min-width: $deviceTablet) {
+    margin-bottom: 49px;
     font-size: 20px;
     color: $colorBlack;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 52px;
+  }
+}
+
+.promo__button {
+  margin-top: 25px;
+
+  @media (min-width: $deviceTablet) {
+    margin-top: 0;
   }
 }
