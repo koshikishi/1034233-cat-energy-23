@@ -1,3 +1,5 @@
+'use strict';
+
 // Оживляет мобильное меню
 const navMain = document.querySelector(`.main-nav`);
 const navToggle = navMain.querySelector(`.main-nav__toggle`);
@@ -20,8 +22,7 @@ navToggle.addEventListener(`click`, (evt) => {
 const slider = document.querySelector(`.slider`);
 
 if (slider) {
-  const sliderItemBefore = slider.querySelector(`.slider__item--before`);
-  const sliderItemAfter = slider.querySelector(`.slider__item--after`);
+  const sliderList = slider.querySelector(`.slider__list`);
   const sliderButtonBefore = slider.querySelector(`.slider__button--before`);
   const sliderButtonAfter = slider.querySelector(`.slider__button--after`);
   const sliderToggle = slider.querySelector(`.slider__toggle`);
@@ -32,38 +33,22 @@ if (slider) {
   sliderButtonBefore.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
-    if (sliderItemAfter.classList.contains(`slider__item--shown`)) {
-      toggleSliderToBefore();
-    }
-
-    if (+sliderRange.value !== 100) {
-      sliderRange.value = 100;
-
-      rangeSlider(sliderRange.value);
-    }
+    toggleSlider(`before`);
   });
 
   sliderButtonAfter.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
-    if (sliderItemBefore.classList.contains(`slider__item--shown`)) {
-      toggleSliderToAfter();
-    }
-
-    if (+sliderRange.value) {
-      sliderRange.value = 0;
-
-      rangeSlider(sliderRange.value);
-    }
+    toggleSlider(`after`);
   });
 
   sliderToggle.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
-    if (sliderItemAfter.classList.contains(`slider__item--shown`)) {
-      toggleSliderToBefore();
+    if (sliderToggle.classList.contains(`slider__toggle--after`)) {
+      toggleSlider(`before`);
     } else {
-      toggleSliderToAfter();
+      toggleSlider(`after`);
     }
   });
 
@@ -72,43 +57,29 @@ if (slider) {
 
     rangeSlider(sliderRange.value);
 
-    if (+sliderRange.value === 100) {
-      toggleSliderToBefore();
+    if (+sliderRange.value === 100 && sliderToggle.classList.contains(`slider__toggle--after`)) {
+      sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
     }
 
-    if (!+sliderRange.value) {
-      toggleSliderToAfter();
-    }
-  });
-
-  window.addEventListener(`resize`, () => {
-    if (window.matchMedia(`(max-width: 767px)`).matches) {
-      sliderItemBefore.style.removeProperty(`right`);
-      sliderItemAfter.style.removeProperty(`left`);
-    } else {
-      rangeSlider(sliderRange.value);
+    if (!+sliderRange.value && sliderToggle.classList.contains(`slider__toggle--before`)) {
+      sliderToggle.classList.replace(`slider__toggle--before`, `slider__toggle--after`);
     }
   });
-
-  // Переключает слайдер на слайд "до"
-  let toggleSliderToBefore = () => {
-    sliderItemAfter.classList.remove(`slider__item--shown`);
-    sliderItemBefore.classList.add(`slider__item--shown`);
-
-    sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
-  };
-
-  // Переключает слайдер на слайд "после"
-  let toggleSliderToAfter = () => {
-    sliderItemBefore.classList.remove(`slider__item--shown`);
-    sliderItemAfter.classList.add(`slider__item--shown`);
-
-    sliderToggle.classList.replace(`slider__toggle--before`, `slider__toggle--after`);
-  };
 
   // Изменяет пропорции изображений "до"/"после" в соответствии с переданным значением
   let rangeSlider = (value) => {
-    sliderItemBefore.style.right = `${100 - value}%`;
-    sliderItemAfter.style.left = `${value}%`;
+    sliderList.style.gridTemplateColumns = `${value}% ${100 - value}%`;
+  };
+
+  // Переключает слайдер "до" или "после"
+  let toggleSlider = (state) => {
+    sliderRange.value = (state === `before`) ? 100 : 0;
+    rangeSlider(sliderRange.value);
+
+    if (state === `before`) {
+      sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
+    } else {
+      sliderToggle.classList.replace(`slider__toggle--before`, `slider__toggle--after`);
+    }
   };
 }
