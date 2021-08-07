@@ -3,8 +3,13 @@
   background-color: $colorGrey;
 
   @media (min-width: $deviceTablet) {
-    padding-top: 55px;
-    padding-bottom: 61px;
+    padding-top: 54px;
+    padding-bottom: 62px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    padding-top: 58px;
+    padding-bottom: 58px;
   }
 }
 
@@ -14,22 +19,53 @@
   @media (min-width: $deviceTablet) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 }
 
 .page-footer__logo {
-  display: flex;
-  height: 95px;
+  display: block;
+  box-sizing: border-box;
+  min-height: 95px;
+  padding-top: 39px;
+  padding-bottom: 27px;
+  text-align: center;
   border-bottom: 1px solid $colorLine;
 
   img {
-    margin: auto;
+    width: 128px;
+  }
+
+  &[href] {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   @media (min-width: $deviceTablet) {
+    align-self: center;
     width: 128px;
-    height: 24px;
+    min-height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
     border: none;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.page-footer__socials {
+  @media (min-width: $deviceTablet) {
+    margin-left: 24px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-left: 27px;
   }
 }
