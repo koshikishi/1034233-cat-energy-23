@@ -83,3 +83,37 @@ if (slider) {
     }
   };
 }
+
+// Инициализирует интерактивную карту
+function initMap() {
+  const mapCoordinates = {};
+
+  if (window.matchMedia(`(min-width: 1330px)`).matches) {
+    mapCoordinates.lat = 59.939102;
+    mapCoordinates.lng = 30.317329;
+  } else if (window.matchMedia(`(min-width: 768px)`).matches) {
+    mapCoordinates.lat = 59.939802;
+    mapCoordinates.lng = 30.322279;
+  } else {
+    mapCoordinates.lat = 59.939002;
+    mapCoordinates.lng = 30.322329;
+  }
+
+  const map = new google.maps.Map(document.querySelector(`.contacts__map`), {
+    zoom: window.matchMedia(`(min-width: 1330px)`).matches ? 16 : 15,
+    center: mapCoordinates,
+    disableDefaultUI: true
+  });
+
+  const markerCoordinates = {
+    lat: 59.938702,
+    lng: 30.322629
+  };
+  const icon = `img/map-marker.png`;
+
+  const marker = new google.maps.Marker({
+    position: markerCoordinates,
+    map,
+    icon
+  });
+}
