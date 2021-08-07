@@ -16,10 +16,10 @@
 // Задаёт базовую макро-сетку
 @mixin grid-container {
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 560px) minmax(20px, 1fr);
 
   @media (min-width: $deviceTablet) {
-    grid-template-columns: 30px 1fr 30px;
+    grid-template-columns: minmax(30px, 1fr) minmax(auto, 940px) minmax(30px, 1fr);
   }
 
   @media (min-width: $deviceDesktop) {
