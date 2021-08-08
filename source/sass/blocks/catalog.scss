@@ -17,7 +17,11 @@
   margin-bottom: 40px;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 80px;
+    margin-bottom: 82px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 84px;
   }
 }
 
@@ -35,16 +39,6 @@
 
   @media (min-width: $deviceDesktop) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 63px 80px;
-  }
-}
-
-.catalog__item {
-  @media (min-width: $deviceTablet) {
-    margin-top: 73px;
-  }
-
-  @media (min-width: $deviceDesktop) {
-    margin-top: 80px;
+    gap: 62px 80px;
   }
 }
