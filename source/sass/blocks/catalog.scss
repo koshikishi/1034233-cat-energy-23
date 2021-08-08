@@ -1,7 +1,7 @@
 .catalog {
   @include grid-container;
 
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 
   @media (min-width: $deviceTablet) {
     margin-bottom: 68px;

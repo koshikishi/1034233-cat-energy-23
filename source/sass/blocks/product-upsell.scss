@@ -1,12 +1,13 @@
 .product-upsell {
-  display: grid;
   padding-top: 13px;
-  padding-bottom: 19px;
+  padding-bottom: 18px;
   border-bottom: 1px solid $colorGreySpecial100;
 
   @media (min-width: $deviceTablet) {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 26px 38px 28px;
+    row-gap: 19px;
+    padding: 25px 38px 28px;
 
     @media (max-width: $deviceDesktop - 1) {
       &:last-child {
@@ -19,13 +20,13 @@
     grid-template-columns: 304px 306px 244px;
     align-items: center;
     column-gap: 20px;
-    padding: 15px 0 17px;
+    padding: 15px 0 16px;
   }
 }
 
 .product-upsell__name {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 13px;
   font: 400 16px/1 $fontFamilyTitle;
   color: $colorGreyDarkSpecial200;
   text-transform: uppercase;
@@ -35,27 +36,33 @@
   }
 
   @media (min-width: $deviceTablet) {
+    margin-bottom: 0;
     font-size: 20px;
   }
 }
 
 .product-upsell__features {
   width: 100%;
+  margin-bottom: 15px;
   border-collapse: collapse;
   line-height: 14px;
 
   th {
+    padding: 0;
     font-weight: 400;
     text-align: left;
   }
 
   td {
+    padding: 0;
     text-align: right;
   }
 
   @media (min-width: $deviceTablet) {
     justify-self: end;
     width: auto;
+    margin-top: 2px;
+    margin-bottom: 0;
     line-height: 1.5;
 
     th {
@@ -63,13 +70,14 @@
     }
 
     td {
-      width: 90px;
+      width: 92px;
     }
   }
 
   @media (min-width: $deviceDesktop) {
     justify-self: initial;
     width: 100%;
+    margin-top: 8px;
 
     th {
       text-align: left;

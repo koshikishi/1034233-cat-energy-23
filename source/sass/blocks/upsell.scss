@@ -4,7 +4,7 @@
   margin-bottom: 35px;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 75px;
+    margin-bottom: 76px;
   }
 
   @media (min-width: $deviceDesktop) {
@@ -14,7 +14,7 @@
 
 .upsell__title {
   grid-column: 1 / -1;
-  margin-bottom: 35px;
+  margin-bottom: 33px;
 
   @media (min-width: $deviceTablet) {
     margin-bottom: 80px;
@@ -24,10 +24,10 @@
 .upsell__wrapper {
   display: grid;
   grid-column: 2 / -2;
-  row-gap: 35px;
+  row-gap: 36px;
 
   @media (min-width: $deviceTablet) {
-    row-gap: 70px;
+    row-gap: 68px;
   }
 
   @media (min-width: $deviceDesktop) {

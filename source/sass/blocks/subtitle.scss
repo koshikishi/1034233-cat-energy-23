@@ -10,7 +10,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 16px;
     right: 0;
     left: 0;
     height: 2px;
@@ -33,7 +33,7 @@
     line-height: 1;
 
     &::before {
-      top: 20px;
+      top: 22px;
     }
 
     span {
@@ -45,6 +45,10 @@
   }
 
   @media (min-width: $deviceDesktop) {
+    &::before {
+      top: 23px;
+    }
+
     span {
       margin-right: -36px;
       margin-left: -36px;
