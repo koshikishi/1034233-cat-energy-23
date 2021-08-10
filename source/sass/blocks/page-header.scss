@@ -1,29 +1,28 @@
 .page-header {
   position: relative;
-  box-sizing: border-box;
   min-height: 65px;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
   background-color: $colorWhite;
+  border-bottom: 1px solid $colorLine;
 
-  &--inner {
-    margin-bottom: 25px;
-    border-bottom: 1px solid $colorLine;
+  &--index {
+    margin-bottom: 22px;
+    border: none;
   }
 
   @media (min-width: $deviceTablet) {
     min-height: 102px;
-
-    &--inner {
-      margin-bottom: 40px;
-      border: none;
-    }
+    margin-bottom: 0;
+    border: none;
   }
 
   @media (min-width: $deviceDesktop) {
     min-height: 136px;
-    margin-bottom: 82px;
+    margin-bottom: 30px;
 
     &--index {
+      margin-bottom: 82px;
+
       &::before {
         content: "";
         position: absolute;
@@ -31,12 +30,8 @@
         right: 0;
         bottom: 0;
         left: 50%;
-        background: url("../img/promo-bg-mobile.png") top / auto 302px no-repeat $colorPrimary100;
+        background: url("../img/promo-bg-mobile.png") top left / 1044px auto no-repeat $colorPrimary200;
       }
-    }
-
-    &--inner {
-      margin-bottom: 30px;
     }
   }
 }
@@ -44,43 +39,59 @@
 .page-header__wrapper {
   @include grid-container;
 
-  grid-template-rows: 45px auto;
-  row-gap: 10px;
+  grid-template-columns: 20px 191px 1fr 20px;
+  grid-auto-rows: minmax(45px, auto);
   padding-top: 10px;
+  padding-bottom: 10px;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: 30px 174px 1fr 30px;
-    grid-template-rows: 54px;
+    grid-auto-rows: minmax(54px, auto);
     padding-top: 24px;
     padding-bottom: 24px;
   }
 
   @media (min-width: $deviceDesktop) {
     grid-template-columns: 1fr repeat(2, 610px) 1fr;
-    grid-template-rows: 59px;
+    grid-auto-rows: minmax(59px, auto);
     padding-top: 53px;
+    padding-bottom: 53px;
   }
 }
 
 .page-header__logo {
   grid-column-start: 2;
-  grid-row-start: 1;
   place-self: start;
-  width: 191px;
-  height: 38px;
 
   img {
     display: block;
+    width: 191px;
+    height: 38px;
+  }
+
+  &[href] {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   @media (min-width: $deviceTablet) {
-    width: 174px;
-    height: 52px;
+    img {
+      width: 174px;
+      height: 52px;
+    }
   }
 
   @media (min-width: $deviceDesktop) {
-    width: 202px;
-    height: 59px;
+    img {
+      width: 202px;
+      height: 59px;
+    }
   }
 }
 

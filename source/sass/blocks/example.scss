@@ -1,12 +1,16 @@
 .example {
   @include grid-container;
 
+  padding-top: 29px;
+  padding-bottom: 26px;
   background-color: $colorGrey;
 
   @media (min-width: $deviceTablet) {
     position: relative;
+    padding-top: 43px;
+    padding-bottom: 33px;
     background: none;
-    border-top: 1px solid $colorBorder;
+    border-top: 1px solid $colorBorder100;
 
     &::before {
       content: "";
@@ -22,38 +26,50 @@
 
   @media (min-width: $deviceDesktop) {
     grid-template-columns: 1fr 530px 690px 1fr;
+    padding-top: 0;
+    padding-bottom: 0;
     border: none;
   }
 }
 
 .example__inner {
   grid-column: 2 / -2;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 59px;
+  }
 
   @media (min-width: $deviceDesktop) {
     grid-column: 2 / span 1;
     width: 436px;
     margin-bottom: 0;
+    padding-top: 58px;
   }
 }
 
 .example__title {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 63px;
+  }
 
   @media (min-width: $deviceDesktop) {
-    margin-bottom: 145px;
+    margin-bottom: 146px;
   }
 }
 
 .example__text {
+  margin-top: 0;
   margin-bottom: 25px;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 50px;
+    margin-bottom: 54px;
   }
 
   @media (min-width: $deviceDesktop) {
-    margin-bottom: 70px;
+    margin-bottom: 69px;
   }
 }
 
@@ -78,14 +94,15 @@
   display: flex;
   justify-content: space-between;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 18px;
 
   @media (min-width: $deviceTablet) {
     width: 366px;
+    margin-bottom: 0;
   }
 
   @media (min-width: $deviceDesktop) {
-    margin-bottom: 55px;
+    margin-bottom: 49px;
   }
 }
 
@@ -95,7 +112,8 @@
   align-items: center;
   box-sizing: border-box;
   width: 124px;
-  height: 56px;
+  min-height: 56px;
+  margin-bottom: 16px;
   padding-top: 14px;
   padding-right: 18px;
   padding-left: 18px;
@@ -105,7 +123,8 @@
 
   @media (min-width: $deviceTablet) {
     width: 162px;
-    height: 77px;
+    min-height: 72px;
+    margin-bottom: 6px;
     padding-top: 15px;
     padding-right: 10px;
     padding-left: 10px;
@@ -113,6 +132,7 @@
 }
 
 .example__number {
+  margin-bottom: 8px;
   font: 24px/1 $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
@@ -127,6 +147,7 @@
 .example__description {
   box-sizing: border-box;
   max-width: 87px;
+  margin-bottom: -16px;
   margin-left: 0;
   padding-right: 5px;
   padding-left: 5px;
@@ -137,6 +158,7 @@
   @media (min-width: $deviceTablet) {
     min-width: 112px;
     max-width: initial;
+    margin-bottom: -6px;
     padding-right: 6px;
     padding-left: 6px;
     font-size: 14px;
@@ -149,6 +171,8 @@
 }
 
 .example__cost {
+  margin-top: 0;
+  margin-bottom: 0;
   font: 14px/20px $fontFamilyTitle;
   color: $colorBlack;
   text-align: center;
@@ -156,6 +180,7 @@
 
   @media (min-width: $deviceTablet) {
     width: 180px;
+    margin-top: 6px;
     font-size: 20px;
     line-height: 1.5;
     text-align: right;
@@ -182,10 +207,6 @@
 
 .example__slider {
   grid-column: 1 / -1;
-
-  @media (min-width: $deviceTablet) {
-    margin-bottom: 33px;
-  }
 
   @media (min-width: $deviceDesktop) {
     grid-column: -2 / -3;

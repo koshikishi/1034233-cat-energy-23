@@ -2,14 +2,22 @@
   @include grid-container;
 
   margin-bottom: 42px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 46px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 11px;
+  }
 }
 
 .advantages__title {
   grid-column: 2 / -2;
-  margin-bottom: 35px;
+  margin-bottom: 41px;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 70px;
+    margin-bottom: 72px;
   }
 }
 
@@ -27,8 +35,8 @@
   }
 
   @media (min-width: $deviceDesktop) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 73px;
+    grid-template-columns: repeat(4, 250px);
+    gap: 75px;
   }
 }
 
@@ -36,6 +44,8 @@
   position: relative;
   box-sizing: border-box;
   min-height: 60px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 80px;
   counter-increment: number;
 
@@ -46,14 +56,36 @@
     left: 0;
     width: 60px;
     height: 60px;
-    background-color: $colorPrimary100;
+    background: center no-repeat $colorPrimary100;
+  }
+
+  &--nutrients {
+    &::before {
+      background-image: url("../img/advantages-nutrients.svg");
+    }
+  }
+
+  &--powder {
+    &::before {
+      background-image: url("../img/advantages-powder.svg");
+    }
+  }
+
+  &--dining {
+    &::before {
+      background-image: url("../img/advantages-dining.svg");
+    }
+  }
+
+  &--clock {
+    &::before {
+      background-image: url("../img/advantages-clock.svg");
+    }
   }
 
   @media (min-width: $deviceTablet) {
-    min-height: 280px;
-    padding-top: 110px;
-    padding-right: 80px;
-    padding-left: 0;
+    min-height: 240px;
+    padding: 111px 75px 0 0;
 
     &::before {
       width: 80px;
@@ -63,15 +95,20 @@
     &::after {
       content: counter(number);
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -40px;
+      right: 75px;
       z-index: -1;
+      min-width: 136px;
       font: 280px/1 $fontFamilyTitle;
       color: $colorGrey;
     }
   }
 
-  @media (min-width: $deviceTablet) {
-    padding-right: 5px;
+  @media (min-width: $deviceDesktop) {
+    padding-right: 0;
+
+    &::after {
+      right: 0;
+    }
   }
 }

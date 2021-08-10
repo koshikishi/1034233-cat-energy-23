@@ -3,7 +3,7 @@
   box-sizing: border-box;
   grid-template-columns: repeat(2, 1fr);
   padding: 20px 20px 25px;
-  border-bottom: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder100;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: 1fr;

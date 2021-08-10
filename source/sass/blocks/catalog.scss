@@ -24,7 +24,7 @@
 .catalog__list {
   display: grid;
   grid-column: 1 / -1;
-  border-top: 1px solid $colorBorder;
+  border-top: 1px solid $colorBorder100;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: repeat(2, 1fr);
