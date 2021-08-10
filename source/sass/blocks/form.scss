@@ -1,13 +1,13 @@
 .form {
   @include grid-container;
 
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 
   @media (min-width: $deviceTablet) {
     margin-bottom: 72px;
 
     @media (max-width: $deviceDesktop - 1) {
-      grid-template-columns: 70px 1fr 67px;
+      grid-template-columns: minmax(70px, 1fr) minmax(auto, 863px) minmax(67px, 1fr);
     }
   }
 
@@ -18,18 +18,29 @@
 
 .form__header {
   grid-column: 2 / -2;
-  margin-bottom: 35px;
+  margin-bottom: 39px;
 
   @media (min-width: $deviceTablet) {
-    margin-bottom: 65px;
+    margin-bottom: 66px;
   }
 }
 
 .form__title {
-  margin-bottom: 35px;
+  margin-bottom: 37px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 55px;
+  }
 }
 
 .form__description {
+  width: 230px;
+  margin-top: 0;
+  margin-bottom: 0;
   font: 14px/18px $fontFamilyTitle;
   color: $colorBlack;
   text-transform: uppercase;
@@ -47,7 +58,7 @@
 
 .form__fieldset {
   margin: 0;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
   padding: 0;
   border: none;
 
@@ -58,18 +69,26 @@
   @media (min-width: $deviceTablet) {
     margin-bottom: 65px;
   }
+
+  @media (min-width: $deviceDesktop) {
+    margin-bottom: 68px;
+  }
 }
 
 .form__subtitle {
   width: 100%;
   margin-bottom: 35px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 76px;
+  }
 }
 
 .form__inner {
   @include grid-container;
 
   @media (min-width: $deviceTablet) {
-    grid-template-columns: 70px 1fr 67px;
+    grid-template-columns: minmax(70px, 1fr) minmax(auto, 863px) minmax(67px, 1fr);
   }
 
   @media (min-width: $deviceDesktop) {
@@ -82,9 +101,14 @@
   grid-column: 2 / -2;
   gap: 14px;
 
+  @media (min-width: $deviceTablet) {
+    gap: 20px;
+  }
+
   @media (min-width: $deviceDesktop) {
     &--narrow {
       grid-column-end: initial;
+      align-self: start;
       width: 570px;
     }
 
@@ -96,6 +120,7 @@
 }
 
 .form__field {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -108,26 +133,28 @@
 
   &--radio {
     position: relative;
-    padding-left: 45px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 46px;
     color: $colorGreyDarkSpecial200;
 
     &::before {
       content: "";
       position: absolute;
-      top: -6px;
+      top: 0;
       left: 0;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border: 1px solid $colorGreySpecial100;
       border-radius: 50%;
     }
 
     &::after {
       position: absolute;
-      top: 4px;
-      left: 9px;
-      width: 13px;
-      height: 13px;
+      top: 8px;
+      left: 8px;
+      width: 13.5px;
+      height: 13.5px;
       background-color: $colorPrimary100;
       border-radius: 50%;
     }
@@ -135,70 +162,192 @@
 
   &--checkbox {
     position: relative;
-    padding-left: 45px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 46px;
     color: $colorBlack;
 
     &::before {
       content: "";
       position: absolute;
-      top: -6px;
+      top: 0;
       left: 0;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border: 1px solid $colorGreySpecial100;
     }
 
     &::after {
       position: absolute;
-      top: -6px;
-      left: 0;
-      width: 30px;
-      height: 30px;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background: url("../img/input-check.svg") center / cover no-repeat;
     }
   }
 
   @media (min-width: $deviceTablet) {
     font-size: 20px;
     line-height: 1.5;
+
+    &--radio,
+    &--checkbox {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 60px;
+
+      &::before {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    &--radio {
+      &::after {
+        top: 11px;
+        left: 11px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &--checkbox {
+      &::after {
+        top: 7px;
+        left: 7px;
+        width: 26px;
+        height: 26px;
+      }
+    }
   }
 }
 
 .form__input {
   flex-grow: 1;
   margin-left: 13px;
-  padding: 13px 15px;
+  padding: 12px 15px 13px;
   font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
   border: 1px solid $colorBorder300;
+  appearance: none;
+
+  & + svg {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    color: $colorGreyDarkSpecial200;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &--email {
+    padding-right: 45px;
+
+    & + svg {
+      stroke: currentColor;
+    }
+  }
+
+  &--phone {
+    padding-right: 45px;
+
+    & + svg {
+      fill: currentColor;
+    }
+  }
+
+  &[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+
+  &:hover {
+    border-color: $colorGreySpecial100;
+  }
+
+  &:focus {
+    outline: 2px solid $colorGreyDarkSpecial100;
+    outline-offset: -2px;
+
+    & + svg {
+      color: $colorPrimary100;
+    }
+  }
+
+  .form__field--invalid & {
+    outline: 2px solid $colorError;
+    outline-offset: -2px;
+
+    & + svg {
+      color: $colorError;
+    }
+  }
 
   @media (min-width: $deviceTablet) {
+    margin-left: 17px;
+    padding: 10px 18px;
     font-size: 20px;
     line-height: 1.5;
+
+    & + svg {
+      right: 16px;
+    }
+
+    &--email,
+    &--phone {
+      padding-right: 46px;
+    }
   }
 }
 
 .form__group {
-  display: grid;
-  box-sizing: border-box;
-  gap: 13px;
   grid-column: 1 / -1;
-  margin-top: 25px;
-  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 23px;
   border: solid $colorLine;
   border-width: 1px 0;
 
   @media (min-width: $deviceTablet) {
     grid-column: 2 / -2;
     margin-top: 72px;
+    margin-bottom: 10px;
     border-width: 1px;
+    border-color: $colorBorder300;
   }
 
   @media (min-width: $deviceDesktop) {
     grid-column-start: initial;
-    justify-self: end;
+    place-self: start end;
     width: 570px;
     margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.form__group-inner {
+  display: grid;
+  box-sizing: border-box;
+  gap: 13px;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 22px 20px 18px;
+
+  @media (min-width: $deviceTablet) {
+    max-width: initial;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 24px 28px;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    padding-right: 27px;
+    padding-left: 27px;
   }
 }
 
@@ -220,10 +369,31 @@
   opacity: 0;
   cursor: pointer;
 
+  &:hover + .form__label--radio,
+  &:focus + .form__label--radio {
+    &::before {
+      border-color: $colorRadioHover;
+    }
+  }
+
   &:checked + .form__label--radio {
     &::after {
       content: "";
     }
+  }
+
+  &:disabled {
+    cursor: initial;
+
+    & + .form__label--radio {
+      opacity: 0.3;
+      cursor: initial;
+    }
+  }
+
+  @media (min-width: $deviceTablet) {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -238,10 +408,31 @@
   opacity: 0;
   cursor: pointer;
 
+  &:hover + .form__label--checkbox,
+  &:focus + .form__label--checkbox {
+    &::before {
+      border-color: $colorRadioHover;
+    }
+  }
+
   &:checked + .form__label--checkbox {
     &::after {
       content: "";
     }
+  }
+
+  &:disabled {
+    cursor: initial;
+
+    & + .form__label--checkbox {
+      opacity: 0.3;
+      cursor: initial;
+    }
+  }
+
+  @media (min-width: $deviceTablet) {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -249,14 +440,31 @@
   flex-grow: 1;
   box-sizing: border-box;
   height: 150px;
-  padding: 13px 15px;
+  padding: 12px;
+  padding-left: 14px;
   font: 16px/18px $fontFamilyTitle;
   color: inherit;
   text-transform: uppercase;
   border: 1px solid $colorBorder300;
   resize: none;
 
+  &:hover {
+    border-color: $colorGreySpecial100;
+  }
+
+  &:focus {
+    outline: 2px solid $colorGreyDarkSpecial100;
+    outline-offset: -2px;
+  }
+
+  .form__field--invalid & {
+    outline: 2px solid $colorError;
+    outline-offset: -2px;
+  }
+
   @media (min-width: $deviceTablet) {
+    height: 174px;
+    padding: 10px 18px;
     font-size: 20px;
     line-height: 1.5;
   }
@@ -264,25 +472,29 @@
 
 .form__options {
   display: grid;
-  gap: 13px;
+  gap: 12px;
   grid-column: 2 / -2;
   margin-bottom: 35px;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 61px;
+    gap: 32px 57px;
+    margin-top: -19px;
+    margin-bottom: 54px;
   }
 
   @media (min-width: $deviceDesktop) {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 80px;
+    margin-top: -20px;
+    margin-bottom: 61px;
   }
 }
 
 .form__bottom {
   display: grid;
   grid-column: 2 / -2;
-  gap: 20px;
+  gap: 21px;
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: repeat(2, 1fr);
@@ -295,10 +507,14 @@
 }
 
 .form__legend {
+  font-size: 14px;
+  line-height: 16px;
   color: $colorBlack;
   text-align: center;
 
   @media (min-width: $deviceTablet) {
+    align-self: center;
+    font-size: 16px;
     text-align: left;
   }
 }
