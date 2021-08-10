@@ -117,3 +117,36 @@ function initMap() {
     icon
   });
 }
+
+// Делает проверку полей ввода формы
+const form = document.querySelector(`.form`);
+
+if (form) {
+  const formRequiredInputs = form.querySelectorAll(`.form__input[required]`);
+
+  for (let input of formRequiredInputs) {
+    input.required = false;
+
+    input.addEventListener(`change`, (evt) => {
+      evt.preventDefault();
+
+      if (input.value) {
+        input.parentElement.classList.remove(`form__field--invalid`);
+      } else {
+        input.parentElement.classList.add(`form__field--invalid`);
+      }
+    });
+  }
+
+  const formSubmitButton = form.querySelector(`.button--form`);
+
+  formSubmitButton.addEventListener(`click`, (evt) => {
+    for (let input of formRequiredInputs) {
+      if (!input.value) {
+        evt.preventDefault();
+
+        input.parentElement.classList.add(`form__field--invalid`);
+      }
+    }
+  });
+}

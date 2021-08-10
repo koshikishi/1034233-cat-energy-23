@@ -231,6 +231,7 @@
   color: inherit;
   text-transform: uppercase;
   border: 1px solid $colorBorder300;
+  appearance: none;
 
   & + svg {
     position: absolute;
@@ -254,6 +255,14 @@
 
     & + svg {
       fill: currentColor;
+    }
+  }
+
+  &[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
     }
   }
 
