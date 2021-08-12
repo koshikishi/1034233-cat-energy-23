@@ -9,13 +9,8 @@ navMain.classList.remove(`main-nav--nojs`);
 navToggle.addEventListener(`click`, (evt) => {
   evt.preventDefault();
 
-  if (navMain.classList.contains(`main-nav--closed`)) {
-    navMain.classList.remove(`main-nav--closed`);
-    navMain.classList.add(`main-nav--opened`);
-  } else {
-    navMain.classList.remove(`main-nav--opened`);
-    navMain.classList.add(`main-nav--closed`);
-  }
+  navMain.classList.toggle(`main-nav--closed`);
+  navMain.classList.toggle(`main-nav--opened`);
 });
 
 // Оживляет слайдер живого примера
@@ -28,27 +23,30 @@ if (slider) {
   const sliderToggle = slider.querySelector(`.slider__toggle`);
   const sliderRange = slider.querySelector(`.slider__range`);
 
+  const SLIDER_RANGE_MIN = 0;
+  const SLIDER_RANGE_MAX = 100;
+
   slider.classList.remove(`slider--nojs`);
 
   sliderButtonBefore.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
-    toggleSlider(`before`);
+    toggleSlider(false);
   });
 
   sliderButtonAfter.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
-    toggleSlider(`after`);
+    toggleSlider(true);
   });
 
   sliderToggle.addEventListener(`click`, (evt) => {
     evt.preventDefault();
 
     if (sliderToggle.classList.contains(`slider__toggle--after`)) {
-      toggleSlider(`before`);
+      toggleSlider(false);
     } else {
-      toggleSlider(`after`);
+      toggleSlider(true);
     }
   });
 
@@ -57,51 +55,58 @@ if (slider) {
 
     rangeSlider(sliderRange.value);
 
-    if (+sliderRange.value === 100 && sliderToggle.classList.contains(`slider__toggle--after`)) {
+    if (+sliderRange.value === SLIDER_RANGE_MAX && sliderToggle.classList.contains(`slider__toggle--after`)) {
       sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
     }
 
-    if (!+sliderRange.value && sliderToggle.classList.contains(`slider__toggle--before`)) {
+    if (+sliderRange.value === SLIDER_RANGE_MIN && sliderToggle.classList.contains(`slider__toggle--before`)) {
       sliderToggle.classList.replace(`slider__toggle--before`, `slider__toggle--after`);
     }
   });
 
   // Изменяет пропорции изображений "до"/"после" в соответствии с переданным значением
-  let rangeSlider = (value) => {
-    sliderList.style.gridTemplateColumns = `${value}% ${100 - value}%`;
-  };
+  function rangeSlider(value) {
+    sliderList.style.gridTemplateColumns = `${value}% ${SLIDER_RANGE_MAX - value}%`;
+  }
 
   // Переключает слайдер "до" или "после"
-  let toggleSlider = (state) => {
-    sliderRange.value = (state === `before`) ? 100 : 0;
+  function toggleSlider(state) {
+    sliderRange.value = state ? SLIDER_RANGE_MIN : SLIDER_RANGE_MAX;
     rangeSlider(sliderRange.value);
 
-    if (state === `before`) {
-      sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
-    } else {
+    if (state) {
       sliderToggle.classList.replace(`slider__toggle--before`, `slider__toggle--after`);
+    } else {
+      sliderToggle.classList.replace(`slider__toggle--after`, `slider__toggle--before`);
     }
-  };
+  }
 }
 
 // Инициализирует интерактивную карту
 function initMap() {
-  const mapCoordinates = {};
-
-  if (window.matchMedia(`(min-width: 1330px)`).matches) {
-    mapCoordinates.lat = 59.939102;
-    mapCoordinates.lng = 30.317329;
-  } else if (window.matchMedia(`(min-width: 768px)`).matches) {
-    mapCoordinates.lat = 59.939802;
-    mapCoordinates.lng = 30.322279;
-  } else {
-    mapCoordinates.lat = 59.939002;
-    mapCoordinates.lng = 30.322329;
-  }
+  const mapCoordinates = {
+    mobile: {
+      lat: 59.939002,
+      lng: 30.322329
+    },
+    tablet: {
+      lat: 59.939802,
+      lng: 30.322279
+    },
+    desktop: {
+      lat: 59.939102,
+      lng: 30.317329
+    }
+  };
+  const zoom = {
+    mobile: 14,
+    tablet: 15,
+    desktop: 16
+  };
 
   const map = new google.maps.Map(document.querySelector(`.contacts__map`), {
-    zoom: window.matchMedia(`(min-width: 1330px)`).matches ? 16 : 15,
-    center: mapCoordinates,
+    zoom: zoom[getCurrentViewportSizeType()],
+    center: mapCoordinates[getCurrentViewportSizeType()],
     disableDefaultUI: true
   });
 
@@ -109,13 +114,40 @@ function initMap() {
     lat: 59.938702,
     lng: 30.322629
   };
-  const icon = `img/map-marker.png`;
+  const icon = {
+    mobile: `img/map-marker-mobile.png`,
+    tablet: `img/map-marker-desktop.png`,
+    desktop: `img/map-marker-desktop.png`,
+  };
 
   const marker = new google.maps.Marker({
     position: markerCoordinates,
     map,
-    icon
+    icon: icon[getCurrentViewportSizeType()]
   });
+
+  let currentViewportSizeType = getCurrentViewportSizeType();
+
+  window.addEventListener(`resize`, () => {
+    if (currentViewportSizeType !== getCurrentViewportSizeType()) {
+      currentViewportSizeType = getCurrentViewportSizeType();
+
+      map.setZoom(zoom[getCurrentViewportSizeType()]);
+      map.setCenter(mapCoordinates[getCurrentViewportSizeType()]);
+      marker.setIcon(icon[getCurrentViewportSizeType()]);
+    }
+  });
+
+  // Определяет тип устройства по размеру вьюпорта
+  function getCurrentViewportSizeType() {
+    if (window.matchMedia(`(min-width: 1330px)`).matches) {
+      return `desktop`;
+    } else if (window.matchMedia(`(min-width: 768px)`).matches) {
+      return `tablet`;
+    } else {
+      return `mobile`;
+    }
+  };
 }
 
 // Делает проверку полей ввода формы
@@ -125,8 +157,6 @@ if (form) {
   const formRequiredInputs = form.querySelectorAll(`.form__input[required]`);
 
   for (let input of formRequiredInputs) {
-    input.required = false;
-
     input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
 

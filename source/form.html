@@ -38,19 +38,20 @@
         </header>
         <form class="form__main" action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="form__fieldset">
+            <legend class="visually-hidden">Информация о коте</legend>
             <div class="form__inner">
               <div class="form__fields form__fields--narrow">
                 <div class="form__field">
                   <label class="form__label" for="form_cat_name">Имя:*</label>
-                  <input class="form__input" id="form_cat_name" type="text" name="cat_name" required>
+                  <input class="form__input" id="form_cat_name" type="text" name="cat_name" placeholder="Имя кота" required>
                 </div>
                 <div class="form__field">
                   <label class="form__label" for="form_cat_weight">Вес (кг):*</label>
-                  <input class="form__input" id="form_cat_weight" type="number" name="cat_weight" min="0" required>
+                  <input class="form__input" id="form_cat_weight" type="number" name="cat_weight" placeholder="Вес кота" min="0" required>
                 </div>
                 <div class="form__field">
                   <label class="form__label" for="form_cat_age">Возраст (лет):</label>
-                  <input class="form__input" id="form_cat_age" type="number" name="cat_age" min="0">
+                  <input class="form__input" id="form_cat_age" type="number" name="cat_age" placeholder="Возраст кота" min="0">
                 </div>
               </div>
               <div class="form__group">
@@ -82,7 +83,7 @@
               <div class="form__fields form__fields--cols">
                 <div class="form__field">
                   <label class="form__label" for="form_email">E-mail:*</label>
-                  <input class="form__input form__input--email" id="form_email" type="email" name="email" required>
+                  <input class="form__input form__input--email" id="form_email" type="email" name="email" placeholder="example@email.com" required>
                   <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.65" y1="6" x2="0.65" y2="14" stroke-width="1.3"/>
                     <line x1="17.65" y1="6" x2="17.65" y2="14" stroke-width="1.3"/>
@@ -93,7 +94,7 @@
                 </div>
                 <div class="form__field">
                   <label class="form__label" for="form_phone">Телефон:*</label>
-                  <input class="form__input form__input--phone" id="form_phone" type="tel" name="phone" required>
+                  <input class="form__input form__input--phone" id="form_phone" type="tel" name="phone" placeholder="8 (960) 900-60-90" required>
                   <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0)">
                       <path d="M17.9 9.4H9.40002V10.6H17.9L15.8 12.7L16.7 13.6L19.8 10.5C19.8974 10.3702 19.95 10.2123 19.95 10.05C19.95 9.88772 19.8974 9.72982 19.8 9.6L16.7 6.5L15.8 7.4L17.9 9.4Z"/>

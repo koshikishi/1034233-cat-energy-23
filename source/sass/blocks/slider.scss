@@ -106,6 +106,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     span {
       border-bottom-style: solid;
       border-bottom-color: rgba($colorBlack, 0.4);
@@ -225,6 +227,8 @@
 
     &:hover,
     &:focus {
+      outline: none;
+
       &::-webkit-slider-thumb {
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.19));
       }

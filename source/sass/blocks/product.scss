@@ -40,6 +40,10 @@
     object-fit: cover;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   @media (min-width: $deviceTablet) {
     align-self: center;
     margin-bottom: 34px;
@@ -79,6 +83,7 @@
 
     &:hover,
     &:focus {
+      outline: none;
       opacity: 0.8;
     }
 
