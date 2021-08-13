@@ -29,7 +29,7 @@
   }
 
   @media (min-width: $deviceDesktop) {
-    width: 690px;
+    width: 730px;
     height: 656px;
   }
 }
@@ -60,6 +60,12 @@
       width: 690px;
       height: 656px;
     }
+
+    &--after {
+      img {
+        margin-right: 40px;
+      }
+    }
   }
 }
 
@@ -83,7 +89,6 @@
 
   @media (min-width: $deviceDesktop) {
     bottom: 65px;
-    transform: translateX(calc(50% + 20px));
   }
 }
 
