@@ -85,25 +85,28 @@
   grid-column: 1 / -1;
   height: 362px;
 
-  > img {
+  picture img {
     display: block;
     width: 320px;
+    height: 362px;
     margin: 0 auto;
   }
 
   @media (min-width: $deviceTablet) {
     height: 400px;
 
-    > img {
+    picture img {
       width: 768px;
+      height: 400px;
     }
   }
 
   @media (min-width: $deviceDesktop) {
     grid-row-start: 1;
 
-    > img {
+    picture img {
       width: 1440px;
+      object-fit: cover;
     }
   }
 }

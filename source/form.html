@@ -10,7 +10,11 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <a class="page-header__logo" href="index.html">
-          <img src="img/logo-header-mobile.svg" alt="Логотип «Кэт энерджи»" width="191" height="38">
+          <picture>
+            <source srcset="img/logo-header-desktop.svg" media="(min-width: 1330px)">
+            <source srcset="img/logo-header-tablet.svg" media="(min-width: 768px)">
+            <img src="img/logo-header-mobile.svg" alt="Логотип «Кэт энерджи»" width="191" height="38">
+          </picture>
         </a>
         <nav class="page-header__main-nav main-nav main-nav--closed main-nav--nojs">
           <button class="main-nav__toggle" type="button">
@@ -163,7 +167,11 @@
           </address>
         </div>
         <div class="contacts__map">
-          <img src="img/map-mobile.png" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362">
+          <picture>
+            <source srcset="img/map-desktop.png 1x, img/map-desktop@2x.png 2x" media="(min-width: 1330px)">
+            <source srcset="img/map-tablet.png 1x, img/map-tablet@2x.png 2x" media="(min-width: 768px)">
+            <img src="img/map-mobile.png" srcset="img/map-mobile@2x.png 2x" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362">
+          </picture>
         </div>
       </section>
     </main>
