@@ -85,7 +85,7 @@
   grid-column: 1 / -1;
   height: 362px;
 
-  picture img {
+  img {
     display: block;
     width: 320px;
     height: 362px;
@@ -95,7 +95,7 @@
   @media (min-width: $deviceTablet) {
     height: 400px;
 
-    picture img {
+    img {
       width: 768px;
       height: 400px;
     }
@@ -104,7 +104,7 @@
   @media (min-width: $deviceDesktop) {
     grid-row-start: 1;
 
-    picture img {
+    img {
       width: 1440px;
       object-fit: cover;
     }
