@@ -17,6 +17,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     background-color: $colorPrimary200;
   }
 

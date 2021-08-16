@@ -60,6 +60,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     svg {
       color: $colorPrimary100;
     }

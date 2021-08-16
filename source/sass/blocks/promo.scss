@@ -11,7 +11,12 @@
     right: 0;
     left: 0;
     height: 302px;
-    background: url("../img/promo-bg-mobile.png") calc(50% - 34px) 0 / auto 302px no-repeat $colorPrimary200;
+    background: url("../img/promo-bg-mobile.jpg") calc(50% - 34px) 0 no-repeat $colorPrimary200;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/promo-bg-mobile@2x.jpg");
+      background-size: 563px auto;
+    }
   }
 
   &::after {
@@ -21,7 +26,12 @@
     bottom: 43px;
     left: 0;
     height: 270px;
-    background: url("../img/promo-can-mobile.png") center / 280px no-repeat;
+    background: url("../img/promo-can-mobile.png") center no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/promo-can-mobile@2x.png");
+      background-size: 280px auto;
+    }
   }
 
   @media (min-width: $deviceTablet) {
@@ -34,7 +44,12 @@
     &::after {
       bottom: 0;
       height: 609px;
-      background-size: auto 609px;
+      background-image: url("../img/promo-can-tablet.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/promo-can-tablet@2x.png");
+        background-size: 709px auto;
+      }
     }
   }
 
@@ -47,7 +62,12 @@
       left: auto;
       width: 552px;
       height: 499px;
-      background-size: 552px auto;
+      background-image: url("../img/promo-can-desktop.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/promo-can-desktop@2x.png");
+        background-size: 552px auto;
+      }
     }
   }
 }

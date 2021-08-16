@@ -34,7 +34,12 @@
         right: 0;
         bottom: 0;
         left: 50%;
-        background: url("../img/promo-bg-mobile.png") top left / 1044px auto no-repeat $colorPrimary200;
+        background: url("../img/promo-bg-desktop.jpg") top left no-repeat $colorPrimary200;
+
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/promo-bg-desktop@2x.jpg");
+          background-size: 1044px auto;
+        }
       }
     }
   }
@@ -76,6 +81,7 @@
   &[href] {
     &:hover,
     &:focus {
+      outline: none;
       opacity: 0.8;
     }
 

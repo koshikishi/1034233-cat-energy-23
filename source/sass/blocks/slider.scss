@@ -29,19 +29,19 @@
   }
 
   @media (min-width: $deviceDesktop) {
-    width: 690px;
+    width: 730px;
     height: 656px;
   }
 }
 
 .slider__item {
   overflow: hidden;
-  background-color: $colorGrey;
 
   img {
     display: block;
     width: 320px;
     max-width: initial;
+    height: 242px;
   }
 
   &--after {
@@ -49,16 +49,22 @@
   }
 
   @media (min-width: $deviceTablet) {
-    background: none;
-
     img {
       width: 708px;
+      height: 620px;
     }
   }
 
   @media (min-width: $deviceDesktop) {
     img {
       width: 690px;
+      height: 656px;
+    }
+
+    &--after {
+      img {
+        margin-right: 40px;
+      }
     }
   }
 }
@@ -83,7 +89,6 @@
 
   @media (min-width: $deviceDesktop) {
     bottom: 65px;
-    transform: translateX(calc(50% + 20px));
   }
 }
 
@@ -106,6 +111,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     span {
       border-bottom-style: solid;
       border-bottom-color: rgba($colorBlack, 0.4);
@@ -225,6 +232,8 @@
 
     &:hover,
     &:focus {
+      outline: none;
+
       &::-webkit-slider-thumb {
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.19));
       }

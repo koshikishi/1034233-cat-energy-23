@@ -161,6 +161,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     &::before {
       right: 6px;
       width: 26px;

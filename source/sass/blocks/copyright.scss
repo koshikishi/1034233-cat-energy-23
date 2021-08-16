@@ -32,6 +32,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     svg {
       fill: $colorPrimary100;
     }

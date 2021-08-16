@@ -85,32 +85,28 @@
   grid-column: 1 / -1;
   height: 362px;
 
-  > img {
+  img {
     display: block;
     width: 320px;
+    height: 362px;
     margin: 0 auto;
-  }
-
-  @media (max-width: $deviceTablet - 1) {
-    img[src*="map-marker"] {
-      transform: scale(0.5);
-      transform-origin: 50px 103px;
-    }
   }
 
   @media (min-width: $deviceTablet) {
     height: 400px;
 
-    > img {
+    img {
       width: 768px;
+      height: 400px;
     }
   }
 
   @media (min-width: $deviceDesktop) {
     grid-row-start: 1;
 
-    > img {
+    img {
       width: 1440px;
+      object-fit: cover;
     }
   }
 }
