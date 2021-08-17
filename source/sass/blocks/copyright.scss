@@ -26,8 +26,8 @@
   }
 
   svg {
+    color: $colorGreySpecial200;
     pointer-events: auto;
-    fill: $colorGreySpecial200;
   }
 
   &:hover,
@@ -35,7 +35,7 @@
     outline: none;
 
     svg {
-      fill: $colorPrimary100;
+      color: $colorPrimary100;
     }
   }
 
