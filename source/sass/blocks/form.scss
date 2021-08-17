@@ -244,20 +244,9 @@
     pointer-events: none;
   }
 
-  &--email {
-    padding-right: 45px;
-
-    & + svg {
-      stroke: currentColor;
-    }
-  }
-
+  &--email,
   &--phone {
     padding-right: 45px;
-
-    & + svg {
-      fill: currentColor;
-    }
   }
 
   &[type="number"] {

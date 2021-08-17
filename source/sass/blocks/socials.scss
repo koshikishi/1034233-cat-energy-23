@@ -44,17 +44,9 @@
     color: $colorGreySpecial200;
   }
 
-  &--vkontakte,
-  &--instagram {
-    svg {
-      fill: currentColor;
-    }
-  }
-
   &--facebook {
     svg {
       max-height: initial;
-      stroke: currentColor;
     }
   }
 
