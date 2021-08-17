@@ -3,7 +3,10 @@
   box-sizing: border-box;
   min-height: 289px;
   padding: 187px 58px 42px;
-  background: url("../img/gift-mobile.jpg") center no-repeat $colorPrimary100;
+  background-color: $colorPrimary100;
+  background-image: url("../img/gift-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/gift-mobile@2x.jpg");

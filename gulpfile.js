@@ -14,6 +14,7 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
+      require("webp-in-css/plugin"),
       autoprefixer()
     ]))
     .pipe(sourcemap.write("."))

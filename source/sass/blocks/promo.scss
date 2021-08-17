@@ -11,7 +11,10 @@
     right: 0;
     left: 0;
     height: 302px;
-    background: url("../img/promo-bg-mobile.jpg") calc(50% - 34px) 0 no-repeat $colorPrimary200;
+    background-color: $colorPrimary200;
+    background-image: url("../img/promo-bg-mobile.jpg");
+    background-position: calc(50% - 34px) 0;
+    background-repeat: no-repeat;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/promo-bg-mobile@2x.jpg");
@@ -26,7 +29,9 @@
     bottom: 43px;
     left: 0;
     height: 270px;
-    background: url("../img/promo-can-mobile.png") center no-repeat;
+    background-image: url("../img/promo-can-mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/promo-can-mobile@2x.png");
