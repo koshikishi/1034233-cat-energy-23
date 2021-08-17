@@ -24,8 +24,13 @@
 
   @media (min-width: $deviceTablet) {
     grid-template-columns: repeat(3, 32px);
+    width: 136px;
     margin-right: 0;
     margin-left: 0;
+  }
+
+  @media (min-width: $deviceDesktop) {
+    width: 133px;
   }
 }
 
@@ -39,15 +44,8 @@
   svg {
     display: block;
     max-width: 100%;
-    max-height: 16px;
     height: auto;
     color: $colorGreySpecial200;
-  }
-
-  &--facebook {
-    svg {
-      max-height: initial;
-    }
   }
 
   &:hover,
@@ -70,13 +68,6 @@
     svg {
       width: 100%;
       max-width: none;
-      max-height: 23px;
-    }
-
-    &--facebook {
-      svg {
-        max-height: initial;
-      }
     }
   }
 }
