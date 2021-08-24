@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Каталог - HTML Academy: Кэт энерджи</title>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png">
     <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
   </head>
   <body class="page__body no-js">
     <script src="js/vendor/polyfill.min.js"></script>
@@ -21,6 +24,10 @@
             <img src="img/logo-header-mobile.svg" alt="Логотип «Кэт энерджи»" width="191" height="38">
           </picture>
         </a>
+        <!--
+          модификатор main-nav--opened для открытого состояния меню
+          модификатор main-nav--nojs для состояния меню без JS
+        -->
         <nav class="page-header__main-nav main-nav main-nav--closed main-nav--nojs">
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
@@ -53,7 +60,7 @@
                   <source srcset="img/product-01-mobile.webp 1x, img/product-01-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-01-desktop.png 1x, img/product-01-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-01-tablet.png 1x, img/product-01-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-01-mobile.png" srcset="img/product-01-mobile@2x.png 2x" alt="Cat Energy PRO 500 г" width="140" height="112">
+                  <img src="img/product-01-mobile.png" srcset="img/product-01-mobile@2x.png 2x" alt="Cat Energy PRO 500 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -87,7 +94,7 @@
                   <source srcset="img/product-02-mobile.webp 1x, img/product-02-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-02-desktop.png 1x, img/product-02-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-02-tablet.png 1x, img/product-02-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-02-mobile.png" srcset="img/product-02-mobile@2x.png 2x" alt="Cat Energy PRO 1000 г" width="140" height="112">
+                  <img src="img/product-02-mobile.png" srcset="img/product-02-mobile@2x.png 2x" alt="Cat Energy PRO 1000 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -121,7 +128,7 @@
                   <source srcset="img/product-03-mobile.webp 1x, img/product-03-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-03-desktop.png 1x, img/product-03-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-03-tablet.png 1x, img/product-03-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-03-mobile.png" srcset="img/product-03-mobile@2x.png 2x" alt="Cat Energy PRO 500 г" width="140" height="112">
+                  <img src="img/product-03-mobile.png" srcset="img/product-03-mobile@2x.png 2x" alt="Cat Energy PRO 500 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -155,7 +162,7 @@
                   <source srcset="img/product-04-mobile.webp 1x, img/product-04-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-04-desktop.png 1x, img/product-04-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-04-tablet.png 1x, img/product-04-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-04-mobile.png" srcset="img/product-04-mobile@2x.png 2x" alt="Cat Energy PRO 1000 г" width="140" height="112">
+                  <img src="img/product-04-mobile.png" srcset="img/product-04-mobile@2x.png 2x" alt="Cat Energy PRO 1000 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -189,7 +196,7 @@
                   <source srcset="img/product-05-mobile.webp 1x, img/product-05-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-05-desktop.png 1x, img/product-05-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-05-tablet.png 1x, img/product-05-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-05-mobile.png" srcset="img/product-05-mobile@2x.png 2x" alt="Cat Energy Slim 500 г" width="140" height="112">
+                  <img src="img/product-05-mobile.png" srcset="img/product-05-mobile@2x.png 2x" alt="Cat Energy Slim 500 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -223,7 +230,7 @@
                   <source srcset="img/product-06-mobile.webp 1x, img/product-06-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-06-desktop.png 1x, img/product-06-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-06-tablet.png 1x, img/product-06-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-06-mobile.png" srcset="img/product-06-mobile@2x.png 2x" alt="Cat Energy Slim 1000 г" width="140" height="112">
+                  <img src="img/product-06-mobile.png" srcset="img/product-06-mobile@2x.png 2x" alt="Cat Energy Slim 1000 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -257,7 +264,7 @@
                   <source srcset="img/product-07-mobile.webp 1x, img/product-07-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/product-07-desktop.png 1x, img/product-07-desktop@2x.png 2x" media="(min-width: 1400px)">
                   <source srcset="img/product-07-tablet.png 1x, img/product-07-tablet@2x.png 2x" media="(min-width: 768px)">
-                  <img src="img/product-07-mobile.png" srcset="img/product-07-mobile@2x.png 2x" alt="Cat Energy Slim 500 г" width="140" height="112">
+                  <img src="img/product-07-mobile.png" srcset="img/product-07-mobile@2x.png 2x" alt="Cat Energy Slim 500 г" width="140" height="112" loading="lazy">
                 </picture>
               </a>
               <div class="product__info">
@@ -369,7 +376,7 @@
             <source srcset="img/map-mobile.webp 1x, img/map-mobile@2x.webp 2x" type="image/webp">
             <source srcset="img/map-desktop.png 1x, img/map-desktop@2x.png 2x" media="(min-width: 1400px)">
             <source srcset="img/map-tablet.png 1x, img/map-tablet@2x.png 2x" media="(min-width: 768px)">
-            <img src="img/map-mobile.png" srcset="img/map-mobile@2x.png 2x" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362">
+            <img src="img/map-mobile.png" srcset="img/map-mobile@2x.png 2x" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362" loading="lazy">
           </picture>
         </div>
       </section>
@@ -377,7 +384,7 @@
     <footer class="page-footer">
       <div class="page-footer__wrapper">
         <a class="page-footer__logo" href="index.html">
-          <img src="img/logo-footer.svg" alt="Логотип «Кэт энерджи»" width="128" height="24">
+          <img src="img/logo-footer.svg" alt="Логотип «Кэт энерджи»" width="128" height="24" loading="lazy">
         </a>
         <div class="page-footer__socials socials">
           <div class="socials__list">
@@ -412,6 +419,6 @@
       </div>
     </footer>
     <script src="js/script.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap" async></script>
   </body>
 </html>

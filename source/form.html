@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Подбор программы - HTML Academy: Кэт энерджи</title>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png">
     <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
   </head>
   <body class="page__body no-js">
     <script src="js/vendor/polyfill.min.js"></script>
@@ -21,6 +24,10 @@
             <img src="img/logo-header-mobile.svg" alt="Логотип «Кэт энерджи»" width="191" height="38">
           </picture>
         </a>
+        <!--
+          модификатор main-nav--opened для открытого состояния меню
+          модификатор main-nav--nojs для состояния меню без JS
+        -->
         <nav class="page-header__main-nav main-nav main-nav--closed main-nav--nojs">
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
@@ -166,7 +173,7 @@
             <source srcset="img/map-mobile.webp 1x, img/map-mobile@2x.webp 2x" type="image/webp">
             <source srcset="img/map-desktop.png 1x, img/map-desktop@2x.png 2x" media="(min-width: 1400px)">
             <source srcset="img/map-tablet.png 1x, img/map-tablet@2x.png 2x" media="(min-width: 768px)">
-            <img src="img/map-mobile.png" srcset="img/map-mobile@2x.png 2x" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362">
+            <img src="img/map-mobile.png" srcset="img/map-mobile@2x.png 2x" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" width="320" height="362" loading="lazy">
           </picture>
         </div>
       </section>
@@ -174,7 +181,7 @@
     <footer class="page-footer">
       <div class="page-footer__wrapper">
         <a class="page-footer__logo" href="index.html">
-          <img src="img/logo-footer.svg" alt="Логотип «Кэт энерджи»" width="128" height="24">
+          <img src="img/logo-footer.svg" alt="Логотип «Кэт энерджи»" width="128" height="24" loading="lazy">
         </a>
         <div class="page-footer__socials socials">
           <div class="socials__list">
@@ -209,6 +216,6 @@
       </div>
     </footer>
     <script src="js/script.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap" async></script>
   </body>
 </html>

@@ -44,26 +44,26 @@
     background-color: currentColor;
   }
 
+  &::before {
+    top: 3px;
+    box-shadow: 0 8px currentColor;
+  }
+
+  &::after {
+    bottom: 3px;
+  }
+
   .main-nav--opened & {
     &::before {
       top: 12px;
+      box-shadow: none;
       transform: rotate(45deg);
     }
 
     &::after {
       top: 12px;
+      bottom: auto;
       transform: rotate(-45deg);
-    }
-  }
-
-  .main-nav--closed & {
-    &::before {
-      top: 3px;
-      box-shadow: 0 8px currentColor;
-    }
-
-    &::after {
-      bottom: 3px;
     }
   }
 
@@ -99,9 +99,7 @@
   border-top: 1px solid $colorBorder200;
 
   @media (max-width: $deviceTablet - 1) {
-    .main-nav--closed & {
-      display: none;
-    }
+    display: none;
 
     .main-nav--opened & {
       display: block;

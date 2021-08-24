@@ -9,7 +9,6 @@ navMain.classList.remove(`main-nav--nojs`);
 navToggle.addEventListener(`click`, (evt) => {
   evt.preventDefault();
 
-  navMain.classList.toggle(`main-nav--closed`);
   navMain.classList.toggle(`main-nav--opened`);
 });
 
@@ -114,10 +113,11 @@ function initMap() {
     lat: 59.938702,
     lng: 30.322629
   };
+  const isWebp = document.body.classList.contains(`webp`);
   const icon = {
-    mobile: `img/map-marker-mobile.png`,
-    tablet: `img/map-marker-desktop.png`,
-    desktop: `img/map-marker-desktop.png`,
+    mobile: `img/map-marker-mobile.${isWebp ? 'webp' : 'png'}`,
+    tablet: `img/map-marker-desktop.${isWebp ? 'webp' : 'png'}`,
+    desktop: `img/map-marker-desktop.${isWebp ? 'webp' : 'png'}`,
   };
 
   const marker = new google.maps.Marker({
@@ -147,7 +147,7 @@ function initMap() {
     } else {
       return `mobile`;
     }
-  };
+  }
 }
 
 // Делает проверку полей ввода формы
@@ -156,7 +156,7 @@ const form = document.querySelector(`.form`);
 if (form) {
   const formRequiredInputs = form.querySelectorAll(`.form__input[required]`);
 
-  for (let input of formRequiredInputs) {
+  for (const input of formRequiredInputs) {
     input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
 
@@ -171,7 +171,7 @@ if (form) {
   const formSubmitButton = form.querySelector(`.button--form`);
 
   formSubmitButton.addEventListener(`click`, (evt) => {
-    for (let input of formRequiredInputs) {
+    for (const input of formRequiredInputs) {
       if (!input.value) {
         evt.preventDefault();
 
