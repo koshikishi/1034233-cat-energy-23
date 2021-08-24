@@ -62,6 +62,19 @@
     }
 
     &--after {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        height: 462px;
+        background-color: $colorBorder100;
+      }
+
       img {
         margin-right: 40px;
       }

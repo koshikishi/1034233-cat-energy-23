@@ -31,7 +31,7 @@
     border: none;
 
     &::before {
-      background-color: $colorGrey;
+      background: linear-gradient(90deg, $colorGrey calc(50% + 690px), $colorBorder100 calc(50% + 690px));
     }
   }
 }

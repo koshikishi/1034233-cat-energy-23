@@ -242,6 +242,7 @@
     color: $colorGreyDarkSpecial200;
     transform: translateY(-50%);
     pointer-events: none;
+    fill: none;
   }
 
   &--email,
@@ -275,7 +276,15 @@
     }
   }
 
-  .form__field--invalid &,
+  .form__field--invalid & {
+    outline: 2px solid $colorError;
+    outline-offset: -2px;
+
+    & + svg {
+      color: $colorError;
+    }
+  }
+
   &:not(:placeholder-shown):invalid {
     outline: 2px solid $colorError;
     outline-offset: -2px;

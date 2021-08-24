@@ -140,7 +140,7 @@ function initMap() {
 
   // Определяет тип устройства по размеру вьюпорта
   function getCurrentViewportSizeType() {
-    if (window.matchMedia(`(min-width: 1330px)`).matches) {
+    if (window.matchMedia(`(min-width: 1400px)`).matches) {
       return `desktop`;
     } else if (window.matchMedia(`(min-width: 768px)`).matches) {
       return `tablet`;
