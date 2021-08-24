@@ -151,6 +151,8 @@
   height: 14px;
 
   @media (min-width: $deviceTablet) {
+    display: flex;
+    align-items: center;
     width: 428px;
     height: 34px;
   }
@@ -201,7 +203,6 @@
   @media (min-width: $deviceTablet) {
     display: initial;
     width: 100%;
-    margin-top: 15px;
     background: none;
     appearance: none;
 
