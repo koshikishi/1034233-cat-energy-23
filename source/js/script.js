@@ -82,6 +82,8 @@ if (slider) {
 }
 
 // Инициализирует интерактивную карту
+const mapElement = document.querySelector(`.contacts__map`);
+
 function initMap() {
   const mapCoordinates = {
     mobile: {
@@ -103,7 +105,7 @@ function initMap() {
     desktop: 16
   };
 
-  const map = new google.maps.Map(document.querySelector(`.contacts__map`), {
+  const map = new google.maps.Map(mapElement, {
     zoom: zoom[getCurrentViewportSizeType()],
     center: mapCoordinates[getCurrentViewportSizeType()],
     disableDefaultUI: true
@@ -149,6 +151,23 @@ function initMap() {
     }
   }
 }
+
+// Отложенная загрузка интерактивной карты
+const mapObserver = new IntersectionObserver((entries, self) => {
+  if (entries[0].intersectionRatio > 0) {
+    const scriptEl = document.createElement(`script`);
+
+    scriptEl.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap`;
+    document.body.appendChild(scriptEl);
+
+    self.unobserve(mapElement);
+  }
+}, {
+  rootMargin: '100px',
+  threshold: 0
+});
+
+mapObserver.observe(mapElement);
 
 // Делает проверку полей ввода формы
 const form = document.querySelector(`.form`);
