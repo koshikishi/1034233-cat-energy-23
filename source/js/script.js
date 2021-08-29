@@ -9,7 +9,6 @@ navMain.classList.remove(`main-nav--nojs`);
 navToggle.addEventListener(`click`, (evt) => {
   evt.preventDefault();
 
-  navMain.classList.toggle(`main-nav--closed`);
   navMain.classList.toggle(`main-nav--opened`);
 });
 
@@ -83,6 +82,8 @@ if (slider) {
 }
 
 // Инициализирует интерактивную карту
+const mapElement = document.querySelector(`.contacts__map`);
+
 function initMap() {
   const mapCoordinates = {
     mobile: {
@@ -104,7 +105,7 @@ function initMap() {
     desktop: 16
   };
 
-  const map = new google.maps.Map(document.querySelector(`.contacts__map`), {
+  const map = new google.maps.Map(mapElement, {
     zoom: zoom[getCurrentViewportSizeType()],
     center: mapCoordinates[getCurrentViewportSizeType()],
     disableDefaultUI: true
@@ -114,10 +115,11 @@ function initMap() {
     lat: 59.938702,
     lng: 30.322629
   };
+  const isWebp = document.body.classList.contains(`webp`);
   const icon = {
-    mobile: `img/map-marker-mobile.png`,
-    tablet: `img/map-marker-desktop.png`,
-    desktop: `img/map-marker-desktop.png`,
+    mobile: `img/map-marker-mobile.${isWebp ? 'webp' : 'png'}`,
+    tablet: `img/map-marker-desktop.${isWebp ? 'webp' : 'png'}`,
+    desktop: `img/map-marker-desktop.${isWebp ? 'webp' : 'png'}`,
   };
 
   const marker = new google.maps.Marker({
@@ -147,8 +149,25 @@ function initMap() {
     } else {
       return `mobile`;
     }
-  };
+  }
 }
+
+// Отложенная загрузка интерактивной карты
+const mapObserver = new IntersectionObserver((entries, self) => {
+  if (entries[0].intersectionRatio > 0) {
+    const scriptEl = document.createElement(`script`);
+
+    scriptEl.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEZlnef6rM6pZuFImtzyyKnk3wFnpH8I&callback=initMap`;
+    document.body.appendChild(scriptEl);
+
+    self.unobserve(mapElement);
+  }
+}, {
+  rootMargin: '100px',
+  threshold: 0
+});
+
+mapObserver.observe(mapElement);
 
 // Делает проверку полей ввода формы
 const form = document.querySelector(`.form`);
@@ -156,7 +175,7 @@ const form = document.querySelector(`.form`);
 if (form) {
   const formRequiredInputs = form.querySelectorAll(`.form__input[required]`);
 
-  for (let input of formRequiredInputs) {
+  for (const input of formRequiredInputs) {
     input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
 
@@ -171,7 +190,7 @@ if (form) {
   const formSubmitButton = form.querySelector(`.button--form`);
 
   formSubmitButton.addEventListener(`click`, (evt) => {
-    for (let input of formRequiredInputs) {
+    for (const input of formRequiredInputs) {
       if (!input.value) {
         evt.preventDefault();
 
